@@ -283,6 +283,7 @@ table.mk tbody tr:last-child td { border-bottom: none; }
 .foot-brand .brand-logo { height: 28px; }
 .foot-brand .brand-name { font-size: 17px; }
 .foot-brand p { margin: 12px 0 14px; max-width: 370px; line-height: 1.6; }
+.foot-socials { display: flex; gap: 10px; }
 .foot-cols { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
 .foot-col h4 { font-size: 12px; text-transform: uppercase; letter-spacing: .06em; color: var(--ink); margin-bottom: 10px; }
 .foot-col a { display: block; color: var(--muted); padding: 5px 0; cursor: pointer; transition: color .15s; }
