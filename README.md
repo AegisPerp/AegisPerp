@@ -8,7 +8,7 @@ A permissionless perpetual-futures launchpad on Solana. Turn any SPL token into 
 leveraged market the moment its launch fee clears — up to **100× isolated leverage**,
 six order types, and tight spreads from the very first block.
 
-[Website](http://194.233.84.10:3456) · [X / Twitter](https://x.com/alpha_perp) · [Pump.fun](https://pump.fun)
+[alphaperp.fun](https://alphaperp.fun) · [X / Twitter](https://x.com/alpha_perp) · [Pump.fun](https://pump.fun)
 
 </div>
 
