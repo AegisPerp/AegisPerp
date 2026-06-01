@@ -1,0 +1,52 @@
+# dependencies (bun install)
+node_modules
+
+# output
+out
+dist
+*.tgz
+
+# code coverage
+coverage
+*.lcov
+
+# logs
+logs
+_.log
+report.[0-9]_.[0-9]_.[0-9]_.[0-9]_.json
+
+# dotenv environment variable files
+.env
+.env.development.local
+.env.test.local
+.env.production.local
+.env.local
+
+# caches
+.eslintcache
+.cache
+*.tsbuildinfo
+
+# IntelliJ based IDEs
+.idea
+
+# Finder (MacOS) folder config
+.DS_Store
+
+# Database
+server/data/*.db
+server/data/*.db-wal
+server/data/*.db-shm
+
+# Anchor / Solana on-chain artifacts (target/ contains the program upgrade keypair — keep secret!)
+onchain/target/
+onchain/.anchor/
+**/*-keypair.json
+**/*keypair*.json
+*.so
+id.json
+*.pem
+web.log
+
+# do not publish env templates
+.env.example
