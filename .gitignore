@@ -47,6 +47,3 @@ onchain/.anchor/
 id.json
 *.pem
 web.log
-
-# do not publish env templates
-.env.example
