@@ -8,7 +8,7 @@ A permissionless perpetual-futures launchpad on Solana. Turn any SPL token into 
 leveraged market the moment its launch fee clears — up to **100× isolated leverage**,
 six order types, and tight spreads from the very first block.
 
-[axisperp.fun](https://axisperp.fun) · [X / Twitter](https://x.com/axisperp) · [Pump.fun](https://pump.fun)
+[axisperp.fun](https://axisperp.fun) · [X / Twitter](https://x.com/axis_perp) · [Pump.fun](https://pump.fun)
 
 </div>
 

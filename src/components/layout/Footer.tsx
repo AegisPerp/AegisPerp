@@ -47,7 +47,7 @@ export function Footer() {
             {
               title: "Community",
               links: [
-                { label: "Twitter/X", href: "https://x.com/", external: true },
+                { label: "Twitter/X", href: "https://x.com/axis_perp", external: true },
                 { label: "Discord", href: "#" },
                 { label: "Terms", href: "#" },
                 { label: "Privacy", href: "#" },
