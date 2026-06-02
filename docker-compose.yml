@@ -9,14 +9,14 @@ services:
     restart: unless-stopped
     environment:
       - NODE_ENV=production
-      - PORT=3456
-      - API_URL=http://backend:3456
+      - PORT=3018
+      - API_URL=http://backend:3018
     labels:
       - "traefik.enable=true"
       - "traefik.http.routers.perp.rule=Host(`[yourdomain.fun]`)"
       - "traefik.http.routers.perp.entrypoints=websecure"
       - "traefik.http.routers.perp.tls.certresolver=letsencrypt"
-      - "traefik.http.services.perp.loadbalancer.server.port=3456"
+      - "traefik.http.services.perp.loadbalancer.server.port=3018"
     networks:
       - traefik-net
     depends_on:
@@ -31,7 +31,7 @@ services:
     volumes:
       - ./server/data:/app/data
     environment:
-      - BACKEND_PORT=3456
+      - BACKEND_PORT=3018
       - DATABASE_PATH=/app/data/platform.db
       - JUPITER_PRICE_API=https://api.jup.ag/price/v2
       - SOLANA_RPC_URL=https://api.mainnet-beta.solana.com
@@ -40,7 +40,7 @@ services:
       - "traefik.http.routers.perp-api.rule=Host(`api.[yourdomain.fun]`)"
       - "traefik.http.routers.perp-api.entrypoints=websecure"
       - "traefik.http.routers.perp-api.tls.certresolver=letsencrypt"
-      - "traefik.http.services.perp-api.loadbalancer.server.port=3456"
+      - "traefik.http.services.perp-api.loadbalancer.server.port=3018"
     networks:
       - traefik-net
 

@@ -1,5 +1,5 @@
 {
-  "name": "alphaperp",
+  "name": "axisperp",
   "version": "0.1.0",
   "private": true,
   "type": "module",
@@ -7,6 +7,8 @@
     "dev": "bun run build:web && bun static.ts",
     "build:web": "rm -rf dist && bun build ./src/index.html --outdir dist --minify && mkdir -p dist/logos && cp public/logos/* dist/logos/",
     "dev:hot": "bun --hot serve.ts",
+    "serve": "NODE_ENV=production PORT=3018 bun serve.ts",
+    "pm2": "pm2 start ecosystem.config.cjs",
     "dev:full": "bun --hot src/index.ts",
     "build": "bun build ./src/index.html --outdir=dist --sourcemap --target=browser --minify --define:process.env.NODE_ENV='\"production\"' --env='BUN_PUBLIC_*'",
     "start": "NODE_ENV=production bun src/index.ts",

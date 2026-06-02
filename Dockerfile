@@ -7,5 +7,5 @@ RUN bun install --frozen-lockfile --production
 COPY src/ ./src/
 COPY postcss.config.js ./
 
-EXPOSE 3456
+EXPOSE 3018
 CMD ["bun", "src/index.ts"]

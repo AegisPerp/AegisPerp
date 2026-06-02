@@ -11,13 +11,13 @@ export function Hero() {
         Open a perp on anything that <span className="grad">trades.</span>
       </h1>
       <p className="lead rise d3">
-        AlphaPerp turns any Solana token into a leveraged market the moment its
+        AXISPERP turns any Solana token into a leveraged market the moment its
         launch fee clears — up to 100× isolated leverage, six order types, and
-        tight spreads from the first block. Powered by <strong style={{ color: "var(--ink)" }}>$ALPERP</strong>.
+        tight spreads from the first block. Powered by <strong style={{ color: "var(--ink)" }}>$AXPERP</strong>.
       </p>
       <div className="cta-row rise d4">
         <ConnectWallet />
-        <button className="btn btn-ghost btn-lg" onClick={() => window.open(PUMPFUN_URL, "_blank")}>Buy $ALPERP</button>
+        <button className="btn btn-ghost btn-lg" onClick={() => window.open(PUMPFUN_URL, "_blank")}>Buy $AXPERP</button>
       </div>
       <div className="hero-stats rise d5">
         <div><div className="v">100<span className="u">×</span></div><div className="l">max leverage</div></div>

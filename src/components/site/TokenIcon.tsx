@@ -1,7 +1,7 @@
 import { useState } from "react";
 
 const MONO_COLORS: Record<string, string> = {
-  ALPERP: "linear-gradient(135deg,#00e68a,#18d9d2 60%,#7c8bff)",
+  AXPERP: "linear-gradient(135deg,#f5d44e,#e8b923 60%,#b8860b)",
 };
 
 export function TokenIcon({

@@ -1,6 +1,6 @@
 const TOC = [
   ["overview", "Overview"],
-  ["token", "$ALPERP token & tokenomics"],
+  ["token", "$AXPERP token & tokenomics"],
   ["fairlaunch", "Fair launch on Pump.fun"],
   ["launch", "Launch a market"],
   ["trade", "Trading perps"],
@@ -23,18 +23,18 @@ export function DocsPage() {
 
       <article className="docs-body">
         <div className="eyebrow">Documentation</div>
-        <h1>AlphaPerp — the permissionless perp launchpad on Solana.</h1>
+        <h1>AXISPERP — the permissionless perp launchpad on Solana.</h1>
         <p>
-          AlphaPerp turns any Solana token into a leveraged perpetual market the moment its launch fee
+          AXISPERP turns any Solana token into a leveraged perpetual market the moment its launch fee
           clears. No listing committee, no gatekeeping — paste a mint, set max leverage, sign once, and the
-          market is live. <strong>$ALPERP</strong> is the native token that powers fees, discounts and governance
+          market is live. <strong>$AXPERP</strong> is the native token that powers fees, discounts and governance
           across the protocol.
         </p>
 
         <h2 id="overview">Overview</h2>
         <p>
           Centralized venues decide which assets get a perp, take weeks to list them, and keep every cent of
-          the fees. AlphaPerp flips that: anyone can spin up an isolated-margin perpetual market on any SPL
+          the fees. AXISPERP flips that: anyone can spin up an isolated-margin perpetual market on any SPL
           token in seconds, liquidity bootstraps from a virtual bonding curve, and the person who launched the
           market earns a cut of its fees for life.
         </p>
@@ -45,16 +45,17 @@ export function DocsPage() {
           <li><strong>Creator revenue share</strong> — 10% of trading fees route to the launcher forever.</li>
         </ul>
 
-        <h2 id="token">$ALPERP token &amp; tokenomics</h2>
-        <p>$ALPERP is the protocol token. It is a standard Solana SPL token with a fixed, fully-diluted supply.</p>
+        <h2 id="token">$AXPERP token &amp; tokenomics</h2>
+        <p>$AXPERP is the protocol token. It is a standard Solana SPL token with a fixed, fully-diluted supply.</p>
         <table className="doc-table">
           <tbody>
-            <tr><th>Token</th><td className="v">$ALPERP</td></tr>
+            <tr><th>Token</th><td className="v">$AXPERP</td></tr>
             <tr><th>Network</th><td className="v">Solana (SPL)</td></tr>
             <tr><th>Total supply</th><td className="v">1,000,000,000 (1B)</td></tr>
             <tr><th>Distribution</th><td className="v">100% fair launch</td></tr>
             <tr><th>Team / VC / presale</th><td className="v">0% — none</td></tr>
             <tr><th>Launch venue</th><td className="v">Pump.fun</td></tr>
+            <tr><th>Contract address</th><td className="v" style={{fontFamily:"monospace",fontSize:"0.85em",wordBreak:"break-all"}}>TBA — verify on our X at launch</td></tr>
           </tbody>
         </table>
         <div className="doc-pill-row">
@@ -65,7 +66,7 @@ export function DocsPage() {
         </div>
         <h3>Utility</h3>
         <ul>
-          <li><strong>Fee discounts</strong> — holding $ALPERP reduces taker/maker fees on every market.</li>
+          <li><strong>Fee discounts</strong> — holding $AXPERP reduces taker/maker fees on every market.</li>
           <li><strong>Revenue share</strong> — a portion of protocol fees flows back to stakers.</li>
           <li><strong>Governance</strong> — vote on default leverage caps, graduation thresholds and fee splits.</li>
           <li><strong>Priority</strong> — early access to new market types and launch tooling.</li>
@@ -73,7 +74,7 @@ export function DocsPage() {
 
         <h2 id="fairlaunch">Fair launch on Pump.fun</h2>
         <p>
-          $ALPERP launches <strong>100% fair</strong> on <strong>Pump.fun</strong>. There is no private round, no team
+          $AXPERP launches <strong>100% fair</strong> on <strong>Pump.fun</strong>. There is no private round, no team
           allocation and no insider unlock — the entire 1B supply is available to the open market from the first
           second.
         </p>
@@ -81,11 +82,11 @@ export function DocsPage() {
           <li><strong>No presale &amp; no team tokens</strong> — every token is bought on the open bonding curve.</li>
           <li><strong>Bonding-curve pricing</strong> — price discovers organically on Pump.fun until graduation.</li>
           <li><strong>Liquidity to Raydium</strong> — on graduation, Pump.fun migrates liquidity and the LP is burned/locked.</li>
-          <li><strong>One token, one chance</strong> — the contract address published at launch is the only official $ALPERP.</li>
+          <li><strong>One token, one chance</strong> — the contract address published at launch is the only official $AXPERP.</li>
         </ul>
         <div className="doc-callout">
           ⚠️ Always verify the official contract address from our X account before buying. Any token claiming to be
-          $ALPERP that is not the address we publish is a scam.
+          $AXPERP that is not the address we publish is a scam.
         </div>
 
         <h2 id="launch">Launch a market</h2>
@@ -131,7 +132,7 @@ export function DocsPage() {
             <tr><td>Liquidity providers</td><td className="v">10%</td></tr>
           </tbody>
         </table>
-        <p>Indicative taker fee is <code>0.02%</code> per fill; $ALPERP holders receive a discount.</p>
+        <p>Indicative taker fee is <code>0.02%</code> per fill; $AXPERP holders receive a discount.</p>
 
         <h2 id="leverage">Leverage &amp; liquidation</h2>
         <p>
@@ -148,17 +149,17 @@ export function DocsPage() {
         </p>
 
         <h2 id="faq">FAQ</h2>
-        <h3>Is $ALPERP live yet?</h3>
-        <p>$ALPERP launches 100% fair on Pump.fun. The official contract address will be posted on our X account at launch.</p>
-        <h3>Do I need $ALPERP to trade?</h3>
-        <p>No — you trade perps with USDC collateral. Holding $ALPERP simply lowers your fees and unlocks governance.</p>
+        <h3>Is $AXPERP live yet?</h3>
+        <p>$AXPERP launches on Pump.fun — the official CA will be published on our X account at launch. Always verify against our X account before buying.</p>
+        <h3>Do I need $AXPERP to trade?</h3>
+        <p>No — you trade perps with USDC collateral. Holding $AXPERP simply lowers your fees and unlocks governance.</p>
         <h3>What does it cost to launch a market?</h3>
         <p>A flat 0.3 SOL. After that you earn 10% of the market’s trading fees forever.</p>
         <h3>Which wallet do I connect?</h3>
         <p>Phantom is supported out of the box; your real SOL balance sets your launch budget on the launch card.</p>
 
         <p style={{ marginTop: 34, color: "var(--muted)" }}>
-          More questions? Reach us on X (link in the navbar). © 2026 AlphaPerp Labs.
+          More questions? Reach us on X (link in the navbar). © 2026 AXISPERP Labs.
         </p>
       </article>
     </section>

@@ -1,10 +1,10 @@
-// Lightweight standalone server for the AlphaPerp landing page.
+// Lightweight standalone server for the AXISPERP landing page.
 // It only serves the bundled frontend + static coin logos — no SQLite / price
 // service / matching engine — so it always boots regardless of backend deps.
-// Run:  bun --hot serve.ts   (or `bun dev`)   →   http://localhost:3456
+// Run:  bun --hot serve.ts   (or `bun dev`)   →   http://localhost:3018
 import index from "./src/index.html";
 
-const PORT = Number(process.env.PORT || 3456);
+const PORT = Number(process.env.PORT || 3018);
 
 async function staticFile(path: string): Promise<Response> {
   const file = Bun.file(path);
@@ -38,4 +38,4 @@ server = Bun.serve({
   development: process.env.NODE_ENV !== "production" && { hmr: true, console: true },
 });
 
-console.log(`AlphaPerp landing → http://localhost:${PORT}`);
+console.log(`AXISPERP landing → http://localhost:${PORT}`);
