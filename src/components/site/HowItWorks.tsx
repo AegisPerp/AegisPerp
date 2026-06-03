@@ -89,11 +89,11 @@ export function HowItWorks() {
           <h3>Narrow spreads from the start.</h3>
           <p>Fresh markets open against a virtual bonding-curve pool. Early trades settle with sub-percent slippage — the chart reads like a real market, not static noise.</p>
           <svg className="mini" viewBox="0 0 400 160" preserveAspectRatio="none">
-            <defs><linearGradient id="bc" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stopColor="#10b981" stopOpacity="0.25" /><stop offset="100%" stopColor="#10b981" stopOpacity="0" /></linearGradient></defs>
+            <defs><linearGradient id="bc" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stopColor="#c8a415" stopOpacity="0.25" /><stop offset="100%" stopColor="#c8a415" stopOpacity="0" /></linearGradient></defs>
             <path d="M8,138 C110,116 210,72 392,26 L392,160 L8,160 Z" fill="url(#bc)" />
-            <path d="M8,138 C110,116 210,72 392,26" fill="none" stroke="#10b981" strokeWidth="2.5" strokeLinecap="round" />
-            <line x1="262" y1="22" x2="262" y2="150" stroke="#10b981" strokeWidth="1.5" strokeDasharray="5 5" opacity="0.7" />
-            <text x="266" y="30" fill="#10b981" fontSize="10" fontFamily="JetBrains Mono, monospace" fontWeight="700">GRADUATION</text>
+            <path d="M8,138 C110,116 210,72 392,26" fill="none" stroke="#c8a415" strokeWidth="2.5" strokeLinecap="round" />
+            <line x1="262" y1="22" x2="262" y2="150" stroke="#c8a415" strokeWidth="1.5" strokeDasharray="5 5" opacity="0.7" />
+            <text x="266" y="30" fill="#c8a415" fontSize="10" fontFamily="JetBrains Mono, monospace" fontWeight="700">GRADUATION</text>
           </svg>
           <div className="mini-stats">
             <div><div className="k">Slippage @ $10K</div><div className="v">0.42%</div></div>
@@ -107,9 +107,9 @@ export function HowItWorks() {
           <h3>Earn as long as the market exists.</h3>
           <p>10% of all trading fees on your market flows directly to your wallet, indefinitely. The volume doesn't need to come from you.</p>
           <svg className="mini" viewBox="0 0 400 160" preserveAspectRatio="none">
-            <defs><linearGradient id="er" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stopColor="#10b981" stopOpacity="0.22" /><stop offset="100%" stopColor="#10b981" stopOpacity="0" /></linearGradient></defs>
+            <defs><linearGradient id="er" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stopColor="#c8a415" stopOpacity="0.22" /><stop offset="100%" stopColor="#c8a415" stopOpacity="0" /></linearGradient></defs>
             <path d="M8,120 L48,104 L88,112 L128,72 L168,90 L208,58 L248,40 L288,62 L328,48 L392,66 L392,160 L8,160 Z" fill="url(#er)" />
-            <path d="M8,120 L48,104 L88,112 L128,72 L168,90 L208,58 L248,40 L288,62 L328,48 L392,66" fill="none" stroke="#10b981" strokeWidth="2.5" strokeLinejoin="round" strokeLinecap="round" />
+            <path d="M8,120 L48,104 L88,112 L128,72 L168,90 L208,58 L248,40 L288,62 L328,48 L392,66" fill="none" stroke="#c8a415" strokeWidth="2.5" strokeLinejoin="round" strokeLinecap="round" />
           </svg>
           <div className="mini-stats">
             <div><div className="k">Last 24h</div><div className="v g">$84.20</div></div>

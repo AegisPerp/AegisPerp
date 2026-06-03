@@ -15,15 +15,15 @@ export const DEFAULT_VIRTUAL_DEPTH = 120_000;
 export const PALETTE = {
   bg: "#FFFFFF",
   surface: "#FFFFFF",
-  surfaceAlt: "#F1F5F9",
-  accent: "#10B981",
-  accentLight: "rgba(16,185,129,0.08)",
-  long: "#10B981",
-  short: "#EF4444",
-  text: "#0F172A",
-  textMuted: "#64748B",
-  border: "#E2E8F0",
-  borderLight: "#F1F5F9",
+  surfaceAlt: "#F5F3EF",
+  accent: "#C8A415",
+  accentLight: "rgba(200,164,21,0.08)",
+  long: "#1FA971",
+  short: "#E5484D",
+  text: "#1A1507",
+  textMuted: "#8A7E6B",
+  border: "#E8E4DC",
+  borderLight: "#F5F3EF",
 } as const;
 
 export const MOCK_TOKENS = [
