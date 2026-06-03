@@ -2,7 +2,7 @@ import { PUMPFUN_CA } from "../../lib/links";
 
 const TOC = [
   ["overview", "Overview"],
-  ["token", "$Hyperp token & tokenomics"],
+  ["token", "$HYPERP token & tokenomics"],
   ["fairlaunch", "Fair launch on Pump.fun"],
   ["launch", "Launch a market"],
   ["trade", "Trading perps"],
@@ -25,18 +25,18 @@ export function DocsPage() {
 
       <article className="docs-body">
         <div className="eyebrow">Documentation</div>
-        <h1>HyperPerp — permissionless perpetual markets, built on Solana.</h1>
+        <h1>HYPERPERP — permissionless perpetual markets, built on Solana.</h1>
         <p>
-          HyperPerp lets anyone spin up a leveraged perpetual market on any Solana token as soon as the
+          HYPERPERP lets anyone spin up a leveraged perpetual market on any Solana token as soon as the
           launch fee is paid. No committee, no approval queue — just paste a mint, choose your leverage cap,
-          sign the transaction, and the market goes live. <strong>$Hyperp</strong> is the protocol's native token,
+          sign the transaction, and the market goes live. <strong>$HYPERP</strong> is the protocol's native token,
           driving fee discounts, revenue sharing and governance.
         </p>
 
         <h2 id="overview">Overview</h2>
         <p>
           Traditional exchanges choose which tokens deserve a perpetual, take weeks to list them, and pocket
-          all the revenue. HyperPerp inverts that model: anyone can create an isolated-margin perp on any SPL
+          all the revenue. HYPERPERP inverts that model: anyone can create an isolated-margin perp on any SPL
           token in seconds, liquidity seeds itself through a virtual bonding curve, and the market launcher
           earns a share of trading fees permanently.
         </p>
@@ -47,11 +47,11 @@ export function DocsPage() {
           <li><strong>Creator earnings</strong> — 10% of all trading fees flow to the market launcher, permanently.</li>
         </ul>
 
-        <h2 id="token">$Hyperp token &amp; tokenomics</h2>
-        <p>$Hyperp is the protocol's native token — a standard Solana SPL token with a fixed, fully-diluted supply.</p>
+        <h2 id="token">$HYPERP token &amp; tokenomics</h2>
+        <p>$HYPERP is the protocol's native token — a standard Solana SPL token with a fixed, fully-diluted supply.</p>
         <table className="doc-table">
           <tbody>
-            <tr><th>Token</th><td className="v">$Hyperp</td></tr>
+            <tr><th>Token</th><td className="v">$HYPERP</td></tr>
             <tr><th>Network</th><td className="v">Solana (SPL)</td></tr>
             <tr><th>Total supply</th><td className="v">1,000,000,000 (1B)</td></tr>
             <tr><th>Distribution</th><td className="v">100% fair launch</td></tr>
@@ -68,26 +68,26 @@ export function DocsPage() {
         </div>
         <h3>Utility</h3>
         <ul>
-          <li><strong>Fee reduction</strong> — $Hyperp holders pay lower taker and maker fees across all markets.</li>
-          <li><strong>Staking rewards</strong> — a share of protocol revenue is distributed to $Hyperp stakers.</li>
+          <li><strong>Fee reduction</strong> — $HYPERP holders pay lower taker and maker fees across all markets.</li>
+          <li><strong>Staking rewards</strong> — a share of protocol revenue is distributed to $HYPERP stakers.</li>
           <li><strong>Governance</strong> — vote on leverage limits, graduation criteria, and fee distribution.</li>
           <li><strong>Early access</strong> — priority access to new market formats and launch tools.</li>
         </ul>
 
         <h2 id="fairlaunch">Fair launch on Pump.fun</h2>
         <p>
-          $Hyperp is a <strong>100% fair launch</strong> on <strong>Pump.fun</strong>. Zero private rounds, zero team
+          $HYPERP is a <strong>100% fair launch</strong> on <strong>Pump.fun</strong>. Zero private rounds, zero team
           allocation, zero insider unlocks — the full 1B supply hits the open market from second one.
         </p>
         <ul>
           <li><strong>No presale, no team tokens</strong> — all tokens are acquired through the public bonding curve.</li>
           <li><strong>Organic price discovery</strong> — the bonding curve on Pump.fun sets the price until graduation.</li>
           <li><strong>Raydium migration</strong> — upon graduation, Pump.fun moves liquidity to Raydium and the LP is burned/locked.</li>
-          <li><strong>Single official token</strong> — the contract address announced at launch is the only legitimate $Hyperp.</li>
+          <li><strong>Single official token</strong> — the contract address announced at launch is the only legitimate $HYPERP.</li>
         </ul>
         <div className="doc-callout">
           ⚠️ Always confirm the contract address via our official X account before purchasing. Any token claiming to be
-          $Hyperp with a different address is fraudulent.
+          $HYPERP with a different address is fraudulent.
         </div>
 
         <h2 id="launch">Launch a market</h2>
@@ -133,7 +133,7 @@ export function DocsPage() {
             <tr><td>Liquidity providers</td><td className="v">10%</td></tr>
           </tbody>
         </table>
-        <p>Base taker fee is <code>0.02%</code> per fill; $Hyperp holders enjoy reduced rates.</p>
+        <p>Base taker fee is <code>0.02%</code> per fill; $HYPERP holders enjoy reduced rates.</p>
 
         <h2 id="leverage">Leverage &amp; liquidation</h2>
         <p>
@@ -151,17 +151,17 @@ export function DocsPage() {
         </p>
 
         <h2 id="faq">FAQ</h2>
-        <h3>Is $Hyperp live yet?</h3>
-        <p>$Hyperp will launch on Pump.fun — the official contract address will be announced on our X account. Always cross-check with our X before purchasing.</p>
-        <h3>Do I need $Hyperp to trade?</h3>
-        <p>No — perp trading uses USDC as collateral. Holding $Hyperp just reduces your fees and gives you governance rights.</p>
+        <h3>Is $HYPERP live yet?</h3>
+        <p>$HYPERP will launch on Pump.fun — the official contract address will be announced on our X account. Always cross-check with our X before purchasing.</p>
+        <h3>Do I need $HYPERP to trade?</h3>
+        <p>No — perp trading uses USDC as collateral. Holding $HYPERP just reduces your fees and gives you governance rights.</p>
         <h3>What does it cost to launch a market?</h3>
         <p>A flat 0.3 SOL. From there, you earn 10% of all trading fees on that market, permanently.</p>
         <h3>Which wallet do I connect?</h3>
         <p>Phantom is natively supported; your actual SOL balance determines your available launch budget on the launch card.</p>
 
         <p style={{ marginTop: 34, color: "var(--muted)" }}>
-          Got questions? Find us on X (link in the navbar). © 2026 HyperPerp Labs.
+          Got questions? Find us on X (link in the navbar). © 2026 HYPERPERP Labs.
         </p>
       </article>
     </section>

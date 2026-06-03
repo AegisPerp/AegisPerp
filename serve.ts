@@ -1,4 +1,4 @@
-// Lightweight standalone server for the HyperPerp landing page.
+// Lightweight standalone server for the HYPERPERP landing page.
 // It only serves the bundled frontend + static coin logos — no SQLite / price
 // service / matching engine — so it always boots regardless of backend deps.
 // Run:  bun --hot serve.ts   (or `bun dev`)   →   http://localhost:3002
@@ -38,4 +38,4 @@ server = Bun.serve({
   development: process.env.NODE_ENV !== "production" && { hmr: true, console: true },
 });
 
-console.log(`HyperPerp landing → http://localhost:${PORT}`);
+console.log(`HYPERPERP landing → http://localhost:${PORT}`);

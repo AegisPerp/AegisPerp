@@ -16,7 +16,7 @@ export interface IndexStat { price: number; change24h: number; }
 
 const L = (s: string) => `/logos/${s}.png`;
 
-// Tradable perp markets ($Hyperp itself is NOT tradable — it's the brand index).
+// Tradable perp markets ($HYPERP itself is NOT tradable — it's the brand index).
 // Seed prices are placeholders shown until the first realtime tick arrives.
 const SEED: Omit<Market, "spark">[] = [
   { symbol: "SOL",    name: "Solana",          price: 142.5,     change24h: 0, volume24h: 1_250_000, openInterest: 4_200_000, leverage: 100, logo: L("SOL") },
@@ -73,7 +73,7 @@ export function FeedProvider({ children }: { children: ReactNode }) {
       });
       if (!changed) return;
       setMarkets(next);
-      // $Hyperp brand index = average of the live markets' 24h change
+      // $HYPERP brand index = average of the live markets' 24h change
       const chg = next.reduce((s, m) => s + m.change24h, 0) / next.length;
       let driftSum = 0, n = 0;
       next.forEach((nm, i) => { const old = prev[i]; if (old?.price) { driftSum += (nm.price - old.price) / old.price; n++; } });

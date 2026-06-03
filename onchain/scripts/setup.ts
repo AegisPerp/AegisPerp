@@ -1,5 +1,5 @@
 /**
- * AXISPERP devnet setup (FREE — devnet only).
+ * HYPERPERP devnet setup (FREE — devnet only).
  * Run AFTER `anchor deploy`:
  *   cd onchain && bun add @coral-xyz/anchor @solana/web3.js @solana/spl-token
  *   bun run scripts/setup.ts

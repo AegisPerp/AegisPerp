@@ -1,4 +1,4 @@
-// PM2 process config for HyperPerp ($Hyperp) landing page.
+// PM2 process config for HYPERPERP ($HYPERP) landing page.
 // Serves the bundled single-page app via Bun on port 3002.
 //   pm2 start ecosystem.config.cjs
 module.exports = {
