@@ -2,7 +2,7 @@
 // TypeScript compilation at request time. Gzips text assets so the JS bundle
 // transfers fast. Build first with `bun run build:web` (or just `bun dev`).
 const DIST = import.meta.dir + "/dist";
-const PORT = Number(process.env.PORT || 3018);
+const PORT = Number(process.env.PORT || 3002);
 const COMPRESSIBLE = /\.(js|css|html|svg|json|map|txt|ico)$/i;
 const HASHED = /-[a-z0-9]{8}\.(js|css)$/i;
 

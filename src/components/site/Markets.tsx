@@ -3,6 +3,7 @@ import { useFeed, type Market } from "../../lib/feed";
 import { TokenIcon } from "./TokenIcon";
 import { Sparkline } from "./Sparkline";
 import { fmtUsd, fmtPct, fmtCompact } from "../../lib/fmt";
+import { ScrollReveal } from "./ScrollReveal";
 
 function Row({ m }: { m: Market }) {
   const { selected, setSelected } = useFeed();
@@ -44,35 +45,37 @@ function Row({ m }: { m: Market }) {
 export function Markets() {
   const { markets, connected } = useFeed();
   return (
-    <section className="section rise" id="markets">
-      <div className="sec-head">
-        <div>
-          <h2>Live markets</h2>
-          <p>Click any market to load it on the chart — prices stream in real time.</p>
+    <ScrollReveal className="reveal">
+      <section className="section" id="markets">
+        <div className="sec-head">
+          <div>
+            <h2>Live markets</h2>
+            <p>Click any market to load it on the chart — prices stream in real time.</p>
+          </div>
+          <span className="live">
+            <span className="dot" style={{ background: connected ? "var(--accent)" : "var(--cyan)" }} />
+            {connected ? "Live feed" : "Live"}
+          </span>
         </div>
-        <span className="live">
-          <span className="dot" style={{ background: connected ? "var(--accent)" : "var(--cyan)" }} />
-          {connected ? "Live feed" : "Live"}
-        </span>
-      </div>
-      <div className="card table-card">
-        <table className="mk">
-          <thead>
-            <tr>
-              <th>Market</th>
-              <th className="r">Price</th>
-              <th className="r">24h</th>
-              <th className="r hide">Volume</th>
-              <th className="r hide">Max lev.</th>
-              <th className="r hide">Last 40</th>
-              <th className="r"></th>
-            </tr>
-          </thead>
-          <tbody>
-            {markets.map((m) => <Row key={m.symbol} m={m} />)}
-          </tbody>
-        </table>
-      </div>
-    </section>
+        <div className="card table-card">
+          <table className="mk">
+            <thead>
+              <tr>
+                <th>Market</th>
+                <th className="r">Price</th>
+                <th className="r">24h</th>
+                <th className="r hide">Volume</th>
+                <th className="r hide">Max lev.</th>
+                <th className="r hide">Last 40</th>
+                <th className="r"></th>
+              </tr>
+            </thead>
+            <tbody>
+              {markets.map((m) => <Row key={m.symbol} m={m} />)}
+            </tbody>
+          </table>
+        </div>
+      </section>
+    </ScrollReveal>
   );
 }

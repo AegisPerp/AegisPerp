@@ -1,4 +1,5 @@
 import { PUMPFUN_CA } from "../../lib/links";
+import { TokenomicsChart } from "./TokenomicsChart";
 
 const TOC = [
   ["overview", "Overview"],
@@ -66,6 +67,8 @@ export function DocsPage() {
           <span className="doc-pill">Team allocation <b>0%</b></span>
           <span className="doc-pill">Presale <b>0%</b></span>
         </div>
+        <h3>Fee distribution</h3>
+        <TokenomicsChart />
         <h3>Utility</h3>
         <ul>
           <li><strong>Fee reduction</strong> — $HYPERP holders pay lower taker and maker fees across all markets.</li>

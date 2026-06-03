@@ -6,7 +6,7 @@ module.exports = {
     {
       name: "hyperperp",
       script: "/home/indra/.bun/bin/bun",
-      args: "serve.ts",
+      args: "static.ts",
       interpreter: "none",
       cwd: __dirname,
       env: {

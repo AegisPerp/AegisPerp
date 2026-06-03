@@ -4,7 +4,7 @@
 // Run:  bun --hot serve.ts   (or `bun dev`)   →   http://localhost:3002
 import index from "./src/index.html";
 
-const PORT = Number(process.env.PORT || 3018);
+const PORT = Number(process.env.PORT || 3002);
 
 async function staticFile(path: string): Promise<Response> {
   const file = Bun.file(path);
@@ -22,7 +22,8 @@ server = Bun.serve({
     "/logos/:f": (req) => staticFile(`public/logos/${(req.params as any).f}`),
     "/tokens/:f": (req) => staticFile(`public/tokens/${(req.params as any).f}`),
     "/brand/:f": (req) => staticFile(`public/brand/${(req.params as any).f}`),
-    "/logo.jpeg": () => staticFile("public/logo.jpeg"),
+    "/logo.jpeg": () => staticFile("public/logo.png"),
+    "/logo.png": () => staticFile("public/logo.png"),
 
     // optional realtime socket (no publisher here; the UI falls back to its
     // built-in smooth simulation when no messages arrive)

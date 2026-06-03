@@ -1,4 +1,5 @@
 import { useEffect, useRef, useState } from "react";
+import { ScrollReveal } from "./ScrollReveal";
 
 function useCountUp(target: number, duration = 1200) {
   const [v, setV] = useState(0);
@@ -35,11 +36,13 @@ function Stat({ value, suffix, label, decimals = 0, prefix = "" }: { value: numb
 
 export function StatBar() {
   return (
-    <section className="statbar rise" id="stats">
-      <Stat value={48.2} prefix="$" suffix="M" label="total value locked" decimals={1} />
-      <Stat value={412} label="markets live" />
-      <Stat value={1.2} prefix="$" suffix="B" label="24h volume" decimals={1} />
-      <Stat value={99.98} suffix="%" label="uptime" decimals={2} />
-    </section>
+    <ScrollReveal className="reveal">
+      <section className="statbar" id="stats">
+        <Stat value={48.2} prefix="$" suffix="M" label="total value locked" decimals={1} />
+        <Stat value={412} label="markets live" />
+        <Stat value={1.2} prefix="$" suffix="B" label="24h volume" decimals={1} />
+        <Stat value={99.98} suffix="%" label="uptime" decimals={2} />
+      </section>
+    </ScrollReveal>
   );
 }
