@@ -11,9 +11,9 @@ export function Hero() {
         Any token. Any leverage. <span className="grad">One click.</span>
       </h1>
       <p className="lead rise d3">
-        Every token deserves leverage. HYPERPERP lets anyone create an isolated-margin
-        perpetual on any SPL token — 100× max, tight spreads from block one, and you
-        earn 10% of every fee it generates. <strong style={{ color: "var(--ink)" }}>Forever.</strong>
+        Why wait for a listing committee? Pick any Solana token, set up to 100× leverage,
+        sign once — your perp market is live before the next block. Tight spreads from
+        day one, and you earn 10% of every trading fee. <strong style={{ color: "var(--ink)" }}>Forever.</strong>
       </p>
       <div className="cta-row rise d4">
         <ConnectWallet />
