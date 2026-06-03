@@ -1,7 +1,9 @@
 import { useState, useEffect } from "react";
 import { TWITTER_URL } from "../../lib/links";
+import { useFeed } from "../../lib/feed";
 
 export function Nav({ view, go }: { view: "home" | "docs"; go: (t: string) => void }) {
+  const { hyperp } = useFeed();
   const [theme, setTheme] = useState<"light" | "dark">(() => {
     if (typeof window !== "undefined") {
       return (localStorage.getItem("theme") as "light" | "dark") || "light";
@@ -15,6 +17,7 @@ export function Nav({ view, go }: { view: "home" | "docs"; go: (t: string) => vo
   }, [theme]);
 
   const toggleTheme = () => setTheme(t => (t === "light" ? "dark" : "light"));
+  const up = hyperp.change24h >= 0;
 
   return (
     <nav className="nav rise">
@@ -24,6 +27,12 @@ export function Nav({ view, go }: { view: "home" | "docs"; go: (t: string) => vo
           <span className="brand-name">HYPER<b>PERP</b></span>
         </button>
 
+        <div className="nav-ticker" title="$HYPERP index price">
+          <span className="nav-ticker-label">$HYPERP</span>
+          <span className="nav-ticker-price">${hyperp.price.toFixed(2)}</span>
+          <span className={"nav-ticker-chg " + (up ? "up" : "down")}>{up ? "▲" : "▼"} {Math.abs(hyperp.change24h).toFixed(2)}%</span>
+        </div>
+
         <div className="nav-links">
           <a onClick={() => go("how")}>How to use</a>
           <a onClick={() => go("markets")}>Markets</a>
@@ -31,6 +40,10 @@ export function Nav({ view, go }: { view: "home" | "docs"; go: (t: string) => vo
         </div>
 
         <div className="nav-right">
+          <div className="nav-network">
+            <span className="nav-net-dot" />
+            <span className="nav-net-label">Solana</span>
+          </div>
           <button
             className="nav-icon"
             onClick={toggleTheme}
@@ -44,6 +57,7 @@ export function Nav({ view, go }: { view: "home" | "docs"; go: (t: string) => vo
             <svg viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24h-6.66l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231 5.45-6.231zm-1.16 17.52h1.833L7.084 4.126H5.117L17.083 19.77z" /></svg>
           </a>
           <button className="btn btn-primary" onClick={() => go("markets")}>Open app</button>
+          <button className="btn btn-ghost" onClick={() => go("how")}>Launch</button>
         </div>
       </div>
     </nav>

@@ -172,7 +172,24 @@ input { font-family: var(--sans); }
 .nav-links { display: flex; gap: 4px; }
 .nav-links a { color: var(--muted); font-weight: 600; font-size: 14.5px; padding: 8px 13px; border-radius: 10px; transition: color .16s, background .16s; }
 .nav-links a:hover { color: var(--ink); background: rgba(0,0,0,.04); }
-.nav-right { display: flex; align-items: center; gap: 12px; }
+.nav-right { display: flex; align-items: center; gap: 10px; }
+
+/* nav price ticker */
+.nav-ticker { display: flex; align-items: center; gap: 6px; padding: 5px 12px; border-radius: 10px;
+  background: var(--green-soft); border: 1px solid rgba(200,164,21,0.15); cursor: default; }
+.nav-ticker-label { font-weight: 700; font-size: 12px; color: var(--green); letter-spacing: .02em; }
+.nav-ticker-price { font-family: var(--mono); font-weight: 700; font-size: 13px; color: var(--ink); }
+.nav-ticker-chg { font-family: var(--mono); font-weight: 700; font-size: 11.5px; }
+.nav-ticker-chg.up { color: var(--up); }
+.nav-ticker-chg.down { color: var(--down); }
+
+/* nav network badge */
+.nav-network { display: flex; align-items: center; gap: 6px; padding: 6px 12px; border-radius: 999px;
+  background: var(--card); border: 1px solid var(--stroke); font-size: 12.5px; font-weight: 700; color: var(--muted); }
+.nav-net-dot { width: 7px; height: 7px; border-radius: 50%; background: var(--up);
+  box-shadow: 0 0 0 0 rgba(31,169,113,.4); animation: pulse-net 2s infinite; flex: none; }
+@keyframes pulse-net { 0%{box-shadow:0 0 0 0 rgba(31,169,113,.4)} 70%{box-shadow:0 0 0 5px rgba(31,169,113,0)} 100%{box-shadow:0 0 0 0 rgba(31,169,113,0)} }
+.nav-net-label { letter-spacing: .03em; }
 .pill { display: flex; align-items: center; gap: 8px; padding: 7px 12px; border-radius: 999px;
   background: var(--card); border: 1px solid var(--stroke); font-family: var(--mono); font-size: 13px; font-weight: 600; box-shadow: var(--shadow-sm); }
 .pill .sym { color: var(--muted); }
@@ -460,12 +477,15 @@ table.mk tbody tr:last-child td { border-bottom: none; }
   .hero { grid-template-columns: 1fr; gap: 28px; padding: 36px 0 18px; }
   .statbar { grid-template-columns: repeat(2, 1fr); }
   .nav-links { display: none; }
+  .nav-ticker { display: none; }
+  .nav-network { display: none; }
 }
 @media (max-width: 560px) {
   .nav { top: 8px; } .pill { display: none; }
   .hero-stats { gap: 20px; flex-wrap: wrap; }
   table.mk td.hide, table.mk th.hide { display: none; }
   .stat .v { font-size: 28px; }
+  .btn-ghost { display: none; }
 }
 @media (prefers-reduced-motion: reduce) {
   .rise { animation: none; opacity: 1; transform: none; }
