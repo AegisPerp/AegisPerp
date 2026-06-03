@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { TAGLINE, ONE_LINER, LAUNCH_FEE_SOL, MAX_LEVERAGE, ORDER_TYPES } from "../../lib/constants";
 import { Button } from "../ui/Button";
 import { Badge } from "../ui/Badge";
-import logoImg from "../../../public/logo.jpeg";
+import logoImg from "../../../public/logo.png";
 
 function navigate(path: string) {
   window.history.pushState(null, "", path);

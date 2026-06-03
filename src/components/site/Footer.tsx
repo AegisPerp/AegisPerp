@@ -6,7 +6,7 @@ export function Footer({ go }: { go: (t: string) => void }) {
       <div className="foot-top">
         <div className="foot-brand">
           <div className="foot-id">
-            <img className="brand-logo" src="/logos/axis.png" alt="HYPERPERP" />
+            <img className="brand-logo" src="/logos/hyperperp.png" alt="HYPERPERP" />
             <span className="brand-name">HYPER<b>PERP</b></span>
           </div>
           <p>Perpetuals on anything that trades. Isolated leverage up to 100× on any Solana token. Powered by $HYPERP.</p>

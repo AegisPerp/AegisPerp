@@ -1,7 +1,7 @@
 import React from "react";
 import { PROJECT_NAME } from "../../lib/constants";
 import { Badge } from "../ui/Badge";
-import logoImg from "../../../public/logo.jpeg";
+import logoImg from "../../../public/logo.png";
 
 function navigate(path: string) {
   window.history.pushState(null, "", path);
