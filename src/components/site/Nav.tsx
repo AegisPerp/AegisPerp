@@ -5,8 +5,8 @@ export function Nav({ view, go }: { view: "home" | "docs"; go: (t: string) => vo
     <nav className="nav rise">
       <div className="nav-inner">
         <button className="brand" onClick={() => go("top")} style={{ background: "none", border: "none", cursor: "pointer" }}>
-          <img className="brand-logo" src="/logos/axis.png" alt="AXISPERP" />
-          <span className="brand-name">AXIS<b>PERP</b></span>
+          <img className="brand-logo" src="/logos/axis.png" alt="HyperPerp" />
+          <span className="brand-name">Hyper<b>Perp</b></span>
         </button>
 
         <div className="nav-links">

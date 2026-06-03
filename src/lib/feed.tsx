@@ -16,7 +16,7 @@ export interface IndexStat { price: number; change24h: number; }
 
 const L = (s: string) => `/logos/${s}.png`;
 
-// Tradable perp markets ($AXPERP itself is NOT tradable — it's the brand index).
+// Tradable perp markets ($Hyperp itself is NOT tradable — it's the brand index).
 // Seed prices are placeholders shown until the first realtime tick arrives.
 const SEED: Omit<Market, "spark">[] = [
   { symbol: "SOL",    name: "Solana",          price: 142.5,     change24h: 0, volume24h: 1_250_000, openInterest: 4_200_000, leverage: 100, logo: L("SOL") },
@@ -33,7 +33,7 @@ function initMarkets(): Market[] { return SEED.map((m) => ({ ...m, spark: [m.pri
 
 interface FeedValue {
   markets: Market[];
-  axperp: IndexStat;
+  hyperp: IndexStat;
   connected: boolean;
   source: string;
   selected: string;
@@ -44,14 +44,14 @@ const FeedCtx = createContext<FeedValue | null>(null);
 
 export function FeedProvider({ children }: { children: ReactNode }) {
   const [markets, setMarkets] = useState<Market[]>(initMarkets);
-  const [axperp, setAxperp] = useState<IndexStat>({ price: 24.8, change24h: 0 });
+  const [hyperp, setHyperp] = useState<IndexStat>({ price: 24.8, change24h: 0 });
   const [connected, setConnected] = useState(false);
   const [source, setSource] = useState("connecting…");
   const [selected, setSelected] = useState("SOL");
   const ref = useRef<Market[]>(markets);
   ref.current = markets;
-  const alpRef = useRef(axperp);
-  alpRef.current = axperp;
+  const alpRef = useRef(hyperp);
+  alpRef.current = hyperp;
   const live = useRef<Record<string, { price?: number; change?: number }>>({});
 
   // 1s render tick: apply the latest realtime values (no simulation).
@@ -73,12 +73,12 @@ export function FeedProvider({ children }: { children: ReactNode }) {
       });
       if (!changed) return;
       setMarkets(next);
-      // $AXPERP brand index = average of the live markets' 24h change
+      // $Hyperp brand index = average of the live markets' 24h change
       const chg = next.reduce((s, m) => s + m.change24h, 0) / next.length;
       let driftSum = 0, n = 0;
       next.forEach((nm, i) => { const old = prev[i]; if (old?.price) { driftSum += (nm.price - old.price) / old.price; n++; } });
       const a = alpRef.current;
-      setAxperp({ price: +(a.price * (1 + (n ? driftSum / n : 0))).toFixed(4), change24h: +chg.toFixed(2) });
+      setHyperp({ price: +(a.price * (1 + (n ? driftSum / n : 0))).toFixed(4), change24h: +chg.toFixed(2) });
     }, 1000);
     return () => clearInterval(id);
   }, []);
@@ -126,7 +126,7 @@ export function FeedProvider({ children }: { children: ReactNode }) {
   }, []);
 
   const value: FeedValue = {
-    markets, axperp, connected, source, selected, setSelected,
+    markets, hyperp, connected, source, selected, setSelected,
     bySymbol: (s) => ref.current.find((m) => m.symbol === s),
   };
   return <FeedCtx.Provider value={value}>{children}</FeedCtx.Provider>;

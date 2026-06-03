@@ -1,7 +1,7 @@
-// Lightweight standalone server for the AXISPERP landing page.
+// Lightweight standalone server for the HyperPerp landing page.
 // It only serves the bundled frontend + static coin logos — no SQLite / price
 // service / matching engine — so it always boots regardless of backend deps.
-// Run:  bun --hot serve.ts   (or `bun dev`)   →   http://localhost:3018
+// Run:  bun --hot serve.ts   (or `bun dev`)   →   http://localhost:3002
 import index from "./src/index.html";
 
 const PORT = Number(process.env.PORT || 3018);
@@ -38,4 +38,4 @@ server = Bun.serve({
   development: process.env.NODE_ENV !== "production" && { hmr: true, console: true },
 });
 
-console.log(`AXISPERP landing → http://localhost:${PORT}`);
+console.log(`HyperPerp landing → http://localhost:${PORT}`);

@@ -36,4 +36,4 @@ Bun.serve({
   },
 });
 
-console.log(`AXISPERP (static) → http://0.0.0.0:${PORT}  (open http://194.233.84.10:${PORT})`);
+console.log(`HyperPerp (static) → http://0.0.0.0:${PORT}  (open http://194.233.84.10:${PORT})`);

@@ -6,7 +6,7 @@ import { openPosition, closePosition } from "../server/src/services/matchingEngi
 import { startLiquidationChecker, setLiquidationCallback } from "../server/src/services/liquidation";
 import { calcFundingRate } from "../server/src/services/fundingRate";
 
-const PORT = Number(process.env.PORT || 3018);
+const PORT = Number(process.env.PORT || 3002);
 
 const corsHeaders = {
   "Access-Control-Allow-Origin": "*",

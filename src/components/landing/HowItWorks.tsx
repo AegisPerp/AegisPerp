@@ -11,7 +11,7 @@ export function HowItWorks() {
         <div className="text-center mb-20">
           <p className="text-accent text-sm font-semibold uppercase tracking-widest mb-3">How it works</p>
           <h2 className="text-4xl md:text-5xl font-extrabold tracking-[-0.03em]">
-            Three steps. <span className="text-text-secondary">No gatekeepers.</span>
+            Three steps. <span className="text-text-secondary">Zero gatekeepers.</span>
           </h2>
         </div>
 
@@ -24,8 +24,8 @@ export function HowItWorks() {
                   <path d="M12 5v14M5 12h14" strokeLinecap="round" />
                 </svg>
               </div>
-              <h3 className="text-xl font-bold mb-2">Instant listings</h3>
-              <p className="text-text-muted text-sm mb-6 leading-relaxed">Pay 0.3 SOL, ship a perp. Market goes live before the next block.</p>
+              <h3 className="text-xl font-bold mb-2">Instant markets</h3>
+              <p className="text-text-muted text-sm mb-6 leading-relaxed">Pay 0.3 SOL, launch a perp. Your market is live within the same block.</p>
               <div className="bg-bg-secondary rounded-xl p-4 border border-border-light">
                 <div className="space-y-3">
                   <div className="flex items-center gap-2">
@@ -55,7 +55,7 @@ export function HowItWorks() {
                 </svg>
               </div>
               <h3 className="text-xl font-bold mb-2">Bonding-curve liquidity</h3>
-              <p className="text-text-muted text-sm mb-6 leading-relaxed">Tight spreads from minute one. Virtual AMM sized to your leverage cap.</p>
+              <p className="text-text-muted text-sm mb-6 leading-relaxed">Narrow spreads from the start. Virtual AMM scaled to your leverage ceiling.</p>
               <div className="bg-bg-secondary rounded-xl p-4 border border-border-light">
                 <svg viewBox="0 0 200 80" className="w-full h-20">
                   <defs>
@@ -82,8 +82,8 @@ export function HowItWorks() {
                   <path d="M12 2v20M17 5H9.5a3.5 3.5 0 000 7h5a3.5 3.5 0 010 7H6" strokeLinecap="round" strokeLinejoin="round" />
                 </svg>
               </div>
-              <h3 className="text-xl font-bold mb-2">Creator share</h3>
-              <p className="text-text-muted text-sm mb-6 leading-relaxed">Earn 10% of all trading fees on your market. Forever.</p>
+              <h3 className="text-xl font-bold mb-2">Creator earnings</h3>
+              <p className="text-text-muted text-sm mb-6 leading-relaxed">Collect 10% of every trading fee on your market. Permanently.</p>
               <div className="bg-bg-secondary rounded-xl p-4 border border-border-light">
                 <div className="flex items-end justify-between mb-3">
                   <Sparkline width={120} height={40} color="#00E68A" />

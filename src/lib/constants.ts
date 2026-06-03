@@ -4,7 +4,7 @@ export const DOMAIN = "[yourdomain.fun]";
 export const TWITTER_HANDLE = "@[handle]";
 export const TAGLINE = "Open a perp on anything that trades.";
 export const ONE_LINER =
-  "A permissionless perpetual launchpad on Solana. Any SPL token becomes a leveraged market the moment its launch fee clears.";
+  "A permissionless perpetual-futures launchpad on Solana. Every SPL token becomes a leveraged market the instant its launch fee settles.";
 
 export const LAUNCH_FEE_SOL = 0.3;
 export const MAX_LEVERAGE = 100;
@@ -13,17 +13,17 @@ export const GRADUATION_VOLUME = 50_000;
 export const DEFAULT_VIRTUAL_DEPTH = 120_000;
 
 export const PALETTE = {
-  bg: "#EAEFF5",
+  bg: "#FFFFFF",
   surface: "#FFFFFF",
-  surfaceAlt: "#F4F7FA",
-  accent: "#0E9E92",
-  accentLight: "rgba(14,158,146,0.08)",
-  long: "#0FA968",
-  short: "#E5484D",
-  text: "#0A1628",
-  textMuted: "#5A6A7E",
-  border: "#D4DCE6",
-  borderLight: "#E4EAF0",
+  surfaceAlt: "#F1F5F9",
+  accent: "#10B981",
+  accentLight: "rgba(16,185,129,0.08)",
+  long: "#10B981",
+  short: "#EF4444",
+  text: "#0F172A",
+  textMuted: "#64748B",
+  border: "#E2E8F0",
+  borderLight: "#F1F5F9",
 } as const;
 
 export const MOCK_TOKENS = [

@@ -73,27 +73,27 @@ export function HowItWorks() {
     <section className="section" id="how">
       <div className="center-head rise">
         <div className="eyebrow">How it works</div>
-        <h2>Three things a centralized<br />perp desk will never hand you.</h2>
+        <h2>Three things no centralized<br />perp desk will ever give you.</h2>
       </div>
 
       <div className="steps">
         <div className="card spot step rise" onMouseMove={spot}>
           <div className="no">01</div>
           <h3>Pay 0.3 SOL, ship a perp.</h3>
-          <p>No listing call, no committee, no Telegram negotiation. Paste a mint, set your size, sign once — the market is live before your tweet lands.</p>
+          <p>No listing process, no gatekeepers, no backroom deals. Paste a mint, configure your leverage, sign once — the market goes live before your post hits the timeline.</p>
           <LaunchCard />
         </div>
 
         <div className="card spot step rise" onMouseMove={spot}>
           <div className="no">02</div>
-          <h3>Tight spreads from minute one.</h3>
-          <p>Newborn markets open against a virtual bonding-curve pool. Day-one trades clear at sub-percent slippage — the chart looks like a chart, not a noise floor.</p>
+          <h3>Narrow spreads from the start.</h3>
+          <p>Fresh markets open against a virtual bonding-curve pool. Early trades settle with sub-percent slippage — the chart reads like a real market, not static noise.</p>
           <svg className="mini" viewBox="0 0 400 160" preserveAspectRatio="none">
-            <defs><linearGradient id="bc" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stopColor="#2fa56a" stopOpacity="0.25" /><stop offset="100%" stopColor="#2fa56a" stopOpacity="0" /></linearGradient></defs>
+            <defs><linearGradient id="bc" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stopColor="#10b981" stopOpacity="0.25" /><stop offset="100%" stopColor="#10b981" stopOpacity="0" /></linearGradient></defs>
             <path d="M8,138 C110,116 210,72 392,26 L392,160 L8,160 Z" fill="url(#bc)" />
-            <path d="M8,138 C110,116 210,72 392,26" fill="none" stroke="#2fa56a" strokeWidth="2.5" strokeLinecap="round" />
-            <line x1="262" y1="22" x2="262" y2="150" stroke="#2fa56a" strokeWidth="1.5" strokeDasharray="5 5" opacity="0.7" />
-            <text x="266" y="30" fill="#2fa56a" fontSize="10" fontFamily="JetBrains Mono, monospace" fontWeight="700">GRADUATION</text>
+            <path d="M8,138 C110,116 210,72 392,26" fill="none" stroke="#10b981" strokeWidth="2.5" strokeLinecap="round" />
+            <line x1="262" y1="22" x2="262" y2="150" stroke="#10b981" strokeWidth="1.5" strokeDasharray="5 5" opacity="0.7" />
+            <text x="266" y="30" fill="#10b981" fontSize="10" fontFamily="JetBrains Mono, monospace" fontWeight="700">GRADUATION</text>
           </svg>
           <div className="mini-stats">
             <div><div className="k">Slippage @ $10K</div><div className="v">0.42%</div></div>
@@ -104,12 +104,12 @@ export function HowItWorks() {
 
         <div className="card spot step rise" onMouseMove={spot}>
           <div className="no">03</div>
-          <h3>You collect for the life of the market.</h3>
-          <p>10% of every trading fee on a market you launched routes to your wallet, forever. Volume doesn't have to be yours.</p>
+          <h3>Earn as long as the market exists.</h3>
+          <p>10% of all trading fees on your market flows directly to your wallet, indefinitely. The volume doesn't need to come from you.</p>
           <svg className="mini" viewBox="0 0 400 160" preserveAspectRatio="none">
-            <defs><linearGradient id="er" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stopColor="#2fa56a" stopOpacity="0.22" /><stop offset="100%" stopColor="#2fa56a" stopOpacity="0" /></linearGradient></defs>
+            <defs><linearGradient id="er" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stopColor="#10b981" stopOpacity="0.22" /><stop offset="100%" stopColor="#10b981" stopOpacity="0" /></linearGradient></defs>
             <path d="M8,120 L48,104 L88,112 L128,72 L168,90 L208,58 L248,40 L288,62 L328,48 L392,66 L392,160 L8,160 Z" fill="url(#er)" />
-            <path d="M8,120 L48,104 L88,112 L128,72 L168,90 L208,58 L248,40 L288,62 L328,48 L392,66" fill="none" stroke="#2fa56a" strokeWidth="2.5" strokeLinejoin="round" strokeLinecap="round" />
+            <path d="M8,120 L48,104 L88,112 L128,72 L168,90 L208,58 L248,40 L288,62 L328,48 L392,66" fill="none" stroke="#10b981" strokeWidth="2.5" strokeLinejoin="round" strokeLinecap="round" />
           </svg>
           <div className="mini-stats">
             <div><div className="k">Last 24h</div><div className="v g">$84.20</div></div>
