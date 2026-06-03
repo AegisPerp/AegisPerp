@@ -8,7 +8,7 @@ export function Hero() {
         <span className="dot" /> Beta · Live on Solana
       </div>
       <h1 className="h1 rise d2">
-        Open a perp on anything that <span className="grad">trades.</span>
+        Any token. Any leverage. <span className="grad">One click.</span>
       </h1>
       <p className="lead rise d3">
         HYPERPERP converts any Solana token into a leveraged perpetual the instant

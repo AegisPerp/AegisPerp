@@ -21,7 +21,7 @@ export function Hero() {
 
           <h1 className="text-5xl md:text-6xl lg:text-[4.5rem] font-extrabold tracking-[-0.03em] leading-[1.05] fade-up fade-up-2">
             <span className="gradient-text">Open a perp</span>
-            <br />on anything that trades.
+            <br />Any leverage. One click.
           </h1>
 
           <p className="text-lg text-text-secondary max-w-lg leading-relaxed fade-up fade-up-3">

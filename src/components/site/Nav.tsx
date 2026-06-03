@@ -1,9 +1,6 @@
 import { useState, useEffect } from "react";
 import { TWITTER_URL } from "../../lib/links";
-import { useFeed } from "../../lib/feed";
-
 export function Nav({ view, go }: { view: "home" | "docs"; go: (t: string) => void }) {
-  const { hyperp } = useFeed();
   const [theme, setTheme] = useState<"light" | "dark">(() => {
     if (typeof window !== "undefined") {
       return (localStorage.getItem("theme") as "light" | "dark") || "light";
@@ -17,7 +14,6 @@ export function Nav({ view, go }: { view: "home" | "docs"; go: (t: string) => vo
   }, [theme]);
 
   const toggleTheme = () => setTheme(t => (t === "light" ? "dark" : "light"));
-  const up = hyperp.change24h >= 0;
 
   return (
     <nav className="nav rise">
@@ -26,12 +22,6 @@ export function Nav({ view, go }: { view: "home" | "docs"; go: (t: string) => vo
           <img className="brand-logo" src="/logos/hyperperp.png" alt="HYPERPERP" />
           <span className="brand-name">HYPER<b>PERP</b></span>
         </button>
-
-        <div className="nav-ticker" title="$HYPERP index price">
-          <span className="nav-ticker-label">$HYPERP</span>
-          <span className="nav-ticker-price">${hyperp.price.toFixed(2)}</span>
-          <span className={"nav-ticker-chg " + (up ? "up" : "down")}>{up ? "▲" : "▼"} {Math.abs(hyperp.change24h).toFixed(2)}%</span>
-        </div>
 
         <div className="nav-links">
           <a onClick={() => go("how")}>How to use</a>
