@@ -8,5 +8,5 @@ COPY src/ ./src/
 
 RUN mkdir -p /app/data
 
-EXPOSE 4567
+EXPOSE 3018
 CMD ["bun", "src/index.ts"]

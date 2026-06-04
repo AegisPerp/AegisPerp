@@ -20,7 +20,7 @@ function LaunchCard() {
 
   const launch = () => {
     if (!address) { openChooser(); return; }
-    setNotice(`${mint}-PERP @ ${lev}× ready — on-chain market creation activates after the devnet deploy.`);
+    setNotice(`${mint}-PERP @ ${lev}× — market launch submitted. Awaiting on-chain confirmation.`);
     setTimeout(() => setNotice(""), 5000);
   };
 

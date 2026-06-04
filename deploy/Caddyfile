@@ -1,5 +1,5 @@
-# AXISPERP — free HTTPS via Caddy + Let's Encrypt (auto certificate).
-# Domain axisperp.fun already points to 194.233.84.10 (A record verified).
+# HYPERPERP — free HTTPS via Caddy + Let's Encrypt (auto certificate).
+# Domain hyperperp.fun already points to 194.233.84.10 (A record verified).
 #
 # Install Caddy (once) on the VPS:
 #   sudo apt install -y debian-keyring debian-archive-keyring apt-transport-https curl
@@ -11,9 +11,20 @@
 #   sudo cp deploy/Caddyfile /etc/caddy/Caddyfile && sudo systemctl reload caddy
 #
 # Open firewall 80 + 443 (ufw + VPS panel). HTTPS is then automatic.
-# (www.axisperp.fun is NOT in DNS yet — add a CNAME → axisperp.fun first if you want it.)
 
-axisperp.fun {
+hyperperp.fun {
 	encode zstd gzip
+
+	header {
+		X-Frame-Options "DENY"
+		X-Content-Type-Options "nosniff"
+		Referrer-Policy "strict-origin-when-cross-origin"
+		Strict-Transport-Security "max-age=31536000; includeSubDomains"
+	}
+
 	reverse_proxy localhost:3018
+}
+
+www.hyperperp.fun {
+	redir https://hyperperp.fun{uri} permanent
 }

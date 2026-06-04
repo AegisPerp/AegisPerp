@@ -16,6 +16,11 @@ export function openPosition(params: OpenPositionParams) {
   const market = db.query("SELECT * FROM markets WHERE id = ?").get(params.marketId) as any;
   if (!market) throw new Error("Market not found");
   if (market.status === "retired") throw new Error("Market is retired");
+
+  if (params.side !== "long" && params.side !== "short") throw new Error("Side must be 'long' or 'short'");
+  if (!params.collateral || params.collateral < 5) throw new Error("Minimum collateral is $5");
+  if (params.collateral > 250_000) throw new Error("Maximum collateral is $250,000");
+  if (!params.leverage || params.leverage < 2) throw new Error("Minimum leverage is 2×");
   if (params.leverage > market.max_leverage) throw new Error(`Max leverage is ${market.max_leverage}×`);
 
   const cached = getCachedPrice(market.token_mint);

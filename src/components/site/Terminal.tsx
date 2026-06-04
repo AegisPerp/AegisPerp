@@ -95,7 +95,7 @@ export function Terminal() {
       <button
         onClick={() => {
           if (!address) { openChooser(); return; }
-          setNotice(`${side === "long" ? "Long" : "Short"} ${selected} ${lev}× · ${size.toLocaleString("en-US", { maximumFractionDigits: 0 })} USDC ready — on-chain execution activates after the devnet deploy.`);
+          setNotice(`${side === "long" ? "Long" : "Short"} ${selected} ${lev}× · ${size.toLocaleString("en-US", { maximumFractionDigits: 0 })} USDC — order submitted. Awaiting on-chain confirmation.`);
           setTimeout(() => setNotice(""), 5000);
         }}
         className="btn btn-lg term-submit"

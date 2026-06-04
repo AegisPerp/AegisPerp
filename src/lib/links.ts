@@ -1,5 +1,4 @@
-// 🔗 Saat CA pump.fun $HYPERP sudah ada, isi di sini SEKALI — semua tombol
-// "Buy $HYPERP" otomatis mengarah ke https://pump.fun/coin/<CA>
+// Fill PUMPFUN_CA once the token is live — all "Buy $HYPERP" buttons update automatically
 export const PUMPFUN_CA = "";
 export const PUMPFUN_URL = PUMPFUN_CA ? `https://pump.fun/coin/${PUMPFUN_CA}` : "https://pump.fun";
 

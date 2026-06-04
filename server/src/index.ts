@@ -33,7 +33,7 @@ const server = serve({
         const url = new URL(req.url);
         const status = url.searchParams.get("status");
         const sort = url.searchParams.get("sort") || "volume";
-        const limit = Number(url.searchParams.get("limit") || 50);
+        const limit = Math.min(Number(url.searchParams.get("limit") || 50), 200);
         const offset = Number(url.searchParams.get("offset") || 0);
 
         let query = "SELECT * FROM markets WHERE 1=1";
@@ -108,7 +108,7 @@ const server = serve({
         if (!market) return error("Market not found", 404);
 
         const url = new URL(req.url);
-        const limit = Number(url.searchParams.get("limit") || 50);
+        const limit = Math.min(Number(url.searchParams.get("limit") || 50), 200);
         const offset = Number(url.searchParams.get("offset") || 0);
 
         const trades = db.query(`
@@ -292,7 +292,7 @@ const server = serve({
       GET(req) {
         const url = new URL(req.url);
         const period = url.searchParams.get("period") || "24h";
-        const limit = Number(url.searchParams.get("limit") || 20);
+        const limit = Math.min(Number(url.searchParams.get("limit") || 20), 100);
 
         let interval = "-24 hours";
         if (period === "7d") interval = "-7 days";

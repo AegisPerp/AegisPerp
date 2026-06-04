@@ -81,7 +81,7 @@ export function Footer() {
 
         <div className="mt-12 pt-8 border-t border-border flex flex-col sm:flex-row items-center justify-between gap-4">
           <p className="text-text-muted text-xs">
-            &copy; 2024 {PROJECT_NAME}. All rights reserved.
+            &copy; 2026 {PROJECT_NAME}. All rights reserved.
           </p>
           <p className="text-text-muted/60 text-[11px] max-w-md text-center sm:text-right leading-relaxed">
             This is beta software. Trading perpetuals carries the risk of total loss. Nothing on this site is investment advice.

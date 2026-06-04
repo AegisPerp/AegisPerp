@@ -161,7 +161,7 @@ export function DocsPage() {
         <h3>What does it cost to launch a market?</h3>
         <p>A flat 0.3 SOL. From there, you earn 10% of all trading fees on that market, permanently.</p>
         <h3>Which wallet do I connect?</h3>
-        <p>Phantom is natively supported; your actual SOL balance determines your available launch budget on the launch card.</p>
+        <p>Phantom and Solflare are natively supported; your actual SOL balance determines your available launch budget on the launch card.</p>
 
         <p style={{ marginTop: 34, color: "var(--muted)" }}>
           Got questions? Find us on X (link in the navbar). © 2026 HYPERPERP Labs.
