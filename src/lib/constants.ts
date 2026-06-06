@@ -1,7 +1,7 @@
-export const PROJECT_NAME = "HYPERPERP";
-export const TICKER = "$HYPERP";
-export const DOMAIN = "hyperperp.fun";
-export const TWITTER_HANDLE = "@HyperPerp";
+export const PROJECT_NAME = "AEGISPERP";
+export const TICKER = "$AGPERP";
+export const DOMAIN = "aegisperp.fun";
+export const TWITTER_HANDLE = "@AegisPerp";
 export const TAGLINE = "Any token. Any leverage. One click.";
 export const ONE_LINER =
   "A permissionless perpetual-futures launchpad on Solana. Every SPL token becomes a leveraged market the instant its launch fee settles.";

@@ -1,6 +1,6 @@
-// Fill PUMPFUN_CA once the token is live — all "Buy $HYPERP" buttons update automatically
-export const PUMPFUN_CA = "";
+// Fill PUMPFUN_CA once the token is live — all "Buy $AGPERP" buttons update automatically
+export const PUMPFUN_CA = "Fmk4MkTSkZazQ3pfJnNF78kpYQVgyBQJZ36GW1Sypump";
 export const PUMPFUN_URL = PUMPFUN_CA ? `https://pump.fun/coin/${PUMPFUN_CA}` : "https://pump.fun";
 
 // social
-export const TWITTER_URL = "https://x.com/HyperPerp";
+export const TWITTER_URL = "https://x.com/AegisPerp";

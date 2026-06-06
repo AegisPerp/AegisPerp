@@ -1,5 +1,5 @@
-# HYPERPERP — free HTTPS via Caddy + Let's Encrypt (auto certificate).
-# Domain hyperperp.fun already points to 194.233.84.10 (A record verified).
+# AEGISPERP — free HTTPS via Caddy + Let's Encrypt (auto certificate).
+# Domain aegisperp.fun already points to 194.233.84.10 (A record verified).
 #
 # Install Caddy (once) on the VPS:
 #   sudo apt install -y debian-keyring debian-archive-keyring apt-transport-https curl
@@ -12,7 +12,7 @@
 #
 # Open firewall 80 + 443 (ufw + VPS panel). HTTPS is then automatic.
 
-hyperperp.fun {
+aegisperp.fun {
 	encode zstd gzip
 
 	header {
@@ -25,6 +25,6 @@ hyperperp.fun {
 	reverse_proxy localhost:3018
 }
 
-www.hyperperp.fun {
-	redir https://hyperperp.fun{uri} permanent
+www.aegisperp.fun {
+	redir https://aegisperp.fun{uri} permanent
 }

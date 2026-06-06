@@ -1,10 +1,10 @@
-// Lightweight standalone server for the HYPERPERP landing page.
+// Lightweight standalone server for the AEGISPERP landing page.
 // It only serves the bundled frontend + static coin logos — no SQLite / price
 // service / matching engine — so it always boots regardless of backend deps.
-// Run:  bun --hot serve.ts   (or `bun dev`)   →   http://localhost:3002
+// Run:  bun --hot serve.ts   (or `bun dev`)   →   http://localhost:3007
 import index from "./src/index.html";
 
-const PORT = Number(process.env.PORT || 3002);
+const PORT = Number(process.env.PORT || 3007);
 const MAINTENANCE_FLAG = import.meta.dir + "/.maintenance";
 
 const maintenancePage = `<!DOCTYPE html>
@@ -12,12 +12,12 @@ const maintenancePage = `<!DOCTYPE html>
 <head>
   <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
-  <title>HYPERPERP — Maintenance</title>
+  <title>AEGISPERP — Maintenance</title>
   <link rel="icon" type="image/png" href="/logo.png"/>
   <style>
     *{margin:0;padding:0;box-sizing:border-box}
     body{min-height:100vh;display:flex;align-items:center;justify-content:center;
-         background:#0a0a0a;color:#fff;font-family:'DM Sans',system-ui,sans-serif;
+         background:#0a0a0a;color:#fff;font-family:'Pixelify Sans',system-ui,sans-serif;
          text-align:center;padding:24px}
     .card{max-width:480px}
     .logo{width:80px;height:auto;margin-bottom:24px;
@@ -33,8 +33,8 @@ const maintenancePage = `<!DOCTYPE html>
 </head>
 <body>
   <div class="card">
-    <img class="logo" src="/logo.png" alt="HYPERPERP"/>
-    <h1>HYPER<span>PERP</span></h1>
+    <img class="logo" src="/logo.png" alt="AEGISPERP"/>
+    <h1>AEGIS<span>PERP</span></h1>
     <p>We're upgrading our systems to serve you better.<br/>Please check back shortly.</p>
     <div class="status"><span class="pulse"></span>Maintenance in progress</div>
   </div>
@@ -84,4 +84,4 @@ server = Bun.serve({
   development: process.env.NODE_ENV !== "production" && { hmr: true, console: true },
 });
 
-console.log(`HYPERPERP landing → http://localhost:${PORT}`);
+console.log(`AEGISPERP landing → http://localhost:${PORT}`);

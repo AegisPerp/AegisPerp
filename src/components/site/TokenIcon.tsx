@@ -1,7 +1,7 @@
 import { useState } from "react";
 
 const MONO_COLORS: Record<string, string> = {
-  HYPERP: "linear-gradient(135deg,#f5d44e,#c8a415 60%,#9a7d0a)",
+  AGPERP: "linear-gradient(135deg,#f5d44e,#c8a415 60%,#9a7d0a)",
 };
 
 export function TokenIcon({

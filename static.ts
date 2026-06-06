@@ -4,7 +4,7 @@
 import { resolve, normalize } from "path";
 
 const DIST = import.meta.dir + "/dist";
-const PORT = Number(process.env.PORT || 3002);
+const PORT = Number(process.env.PORT || 3007);
 const COMPRESSIBLE = /\.(js|css|html|svg|json|map|txt|ico)$/i;
 const HASHED = /-[a-z0-9]{8}\.(js|css)$/i;
 
@@ -44,4 +44,4 @@ Bun.serve({
   },
 });
 
-console.log(`HYPERPERP (static) → http://0.0.0.0:${PORT}`);
+console.log(`AEGISPERP (static) → http://0.0.0.0:${PORT}`);

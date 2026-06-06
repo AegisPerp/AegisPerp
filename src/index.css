@@ -1,5 +1,5 @@
 /* ============================================================================
-   HYPERPERP — $HYPERP · light theme (hand-authored, no Tailwind)
+   AEGISPERP — $AGPERP · light theme (hand-authored, no Tailwind)
    Palette: white canvas, white cards, gold accent.
    ============================================================================ */
 
@@ -31,7 +31,7 @@
   --radius:    18px;
   --radius-sm: 12px;
   --maxw:      1200px;
-  --sans: "DM Sans", -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
+  --sans: "Pixelify Sans", "Press Start 2P", system-ui, sans-serif;
   --mono: "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
   --shadow-sm: 0 1px 3px rgba(0,0,0,0.08);
   --shadow:    0 18px 44px -22px rgba(0,0,0,0.10);

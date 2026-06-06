@@ -17,7 +17,7 @@ export function Hero() {
       </p>
       <div className="cta-row rise d4">
         <ConnectWallet />
-        <button className="btn btn-ghost btn-lg" onClick={() => window.open(PUMPFUN_URL, "_blank")}>Buy $HYPERP</button>
+        <button className="btn btn-ghost btn-lg" onClick={() => window.open(PUMPFUN_URL, "_blank")}>Buy $AGPERP</button>
       </div>
       <div className="hero-stats rise d5">
         <div><div className="v">100<span className="u">×</span></div><div className="l">max leverage</div></div>

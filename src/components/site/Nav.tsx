@@ -19,8 +19,8 @@ export function Nav({ view, go }: { view: "home" | "docs"; go: (t: string) => vo
     <nav className="nav rise">
       <div className="nav-inner">
         <button className="brand" onClick={() => go("top")} style={{ background: "none", border: "none", cursor: "pointer" }}>
-          <img className="brand-logo" src="/logos/hyperperp.png" alt="HYPERPERP" />
-          <span className="brand-name">HYPER<b>PERP</b></span>
+          <img className="brand-logo" src="/logos/aegisperp.png" alt="AEGISPERP" />
+          <span className="brand-name">AEGIS<b>PERP</b></span>
         </button>
 
         <div className="nav-links">

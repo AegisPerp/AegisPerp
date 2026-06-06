@@ -148,7 +148,7 @@ export function TokenomicsChart() {
           fontFamily="var(--mono, monospace)"
           letterSpacing="-0.03em"
         >
-          $HYPERP
+          $AGPERP
         </text>
         <text
           x={CX}
