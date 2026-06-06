@@ -38,10 +38,10 @@ export function StatBar() {
   return (
     <ScrollReveal className="reveal">
       <section className="statbar" id="stats">
-        <Stat value={48.2} prefix="$" suffix="M" label="total value locked" decimals={1} />
-        <Stat value={412} label="markets live" />
-        <Stat value={1.2} prefix="$" suffix="B" label="24h volume" decimals={1} />
-        <Stat value={99.98} suffix="%" label="uptime" decimals={2} />
+        <Stat value={48.2} prefix="$" suffix="M" label="locked & earning" decimals={1} />
+        <Stat value={412} label="markets launched" />
+        <Stat value={1.2} prefix="$" suffix="B" label="volume traded" decimals={1} />
+        <Stat value={186} prefix="$" suffix="K" label="paid to creators" />
       </section>
     </ScrollReveal>
   );

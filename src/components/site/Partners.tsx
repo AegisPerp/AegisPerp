@@ -9,7 +9,7 @@ export function Partners() {
 
   return (
     <section className="partners rise d4">
-      <div className="eyebrow">Ecosystem</div>
+      <div className="eyebrow">Backed by the giants</div>
       <div className="partners-row">
         {partners.map((p) => (
           <div className="partner-badge" key={p.name}>

@@ -2,7 +2,6 @@
 // It only serves the bundled frontend + static coin logos — no SQLite / price
 // service / matching engine — so it always boots regardless of backend deps.
 // Run:  bun --hot serve.ts   (or `bun dev`)   →   http://localhost:3007
-import index from "./src/index.html";
 
 const PORT = Number(process.env.PORT || 3007);
 const MAINTENANCE_FLAG = import.meta.dir + "/.maintenance";
@@ -17,7 +16,7 @@ const maintenancePage = `<!DOCTYPE html>
   <style>
     *{margin:0;padding:0;box-sizing:border-box}
     body{min-height:100vh;display:flex;align-items:center;justify-content:center;
-         background:#0a0a0a;color:#fff;font-family:'Pixelify Sans',system-ui,sans-serif;
+         background:#0a0a0a;color:#fff;font-family:'Inter',system-ui,sans-serif;
          text-align:center;padding:24px}
     .card{max-width:480px}
     .logo{width:80px;height:auto;margin-bottom:24px;
@@ -58,30 +57,52 @@ async function staticFile(path: string): Promise<Response> {
   return new Response("Not found", { status: 404 });
 }
 
+const DIST = import.meta.dir + "/dist";
+const HASHED = /-[a-z0-9]{8}\.(js|css|png|jpg|svg|woff2?)$/i;
+
 let server: ReturnType<typeof Bun.serve>;
 
 server = Bun.serve({
   port: PORT,
   hostname: "0.0.0.0",
-  routes: {
-    "/logos/:f": (req) => staticFile(`public/logos/${(req.params as any).f}`),
-    "/tokens/:f": (req) => staticFile(`public/tokens/${(req.params as any).f}`),
-    "/brand/:f": (req) => staticFile(`public/brand/${(req.params as any).f}`),
-    "/logo.jpeg": () => staticFile("public/logo.png"),
-    "/logo.png": () => staticFile("public/logo.png"),
+  async fetch(req) {
+    const url = new URL(req.url);
+    const path = url.pathname;
 
-    "/ws/prices": (req) => {
-      if ((server as any).upgrade(req)) return undefined as any;
+    const logosMatch = path.match(/^\/logos\/(.+)$/);
+    if (logosMatch) return staticFile(`public/logos/${logosMatch[1]}`);
+
+    const tokensMatch = path.match(/^\/tokens\/(.+)$/);
+    if (tokensMatch) return staticFile(`public/tokens/${tokensMatch[1]}`);
+
+    const brandMatch = path.match(/^\/brand\/(.+)$/);
+    if (brandMatch) return staticFile(`public/brand/${brandMatch[1]}`);
+
+    if (path === "/logo.jpeg" || path === "/logo.png") return staticFile("public/logo.png");
+
+    if (path === "/ws/prices") {
+      if (server.upgrade(req)) return undefined as any;
       return new Response("WebSocket upgrade failed", { status: 400 });
-    },
+    }
 
-    "/*": async (req) => {
-      if (await isMaintenanceMode()) return maintenanceResponse();
-      return index;
-    },
+    if (await isMaintenanceMode()) return maintenanceResponse();
+
+    // Serve from pre-built dist/
+    let filePath = path === "/" ? "/index.html" : decodeURIComponent(path);
+    let file = Bun.file(DIST + filePath);
+    if (!(await file.exists())) {
+      file = Bun.file(DIST + "/index.html");
+      filePath = "/index.html";
+    }
+    const headers: Record<string, string> = {
+      "Content-Type": file.type || "application/octet-stream",
+    };
+    headers["Cache-Control"] = HASHED.test(filePath)
+      ? "public, max-age=31536000, immutable"
+      : "public, max-age=60";
+    return new Response(file, { headers });
   },
   websocket: { open() {}, message() {}, close() {} },
-  development: process.env.NODE_ENV !== "production" && { hmr: true, console: true },
 });
 
 console.log(`AEGISPERP landing → http://localhost:${PORT}`);

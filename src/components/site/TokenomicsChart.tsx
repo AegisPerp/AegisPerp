@@ -68,7 +68,7 @@ export function TokenomicsChart() {
           cy={CY}
           r={RADIUS}
           fill="none"
-          stroke="var(--stroke, #e8e4dc)"
+          stroke="var(--stroke, #2a2720)"
           strokeWidth={STROKE}
         />
 
@@ -115,7 +115,7 @@ export function TokenomicsChart() {
                 x={lp.x}
                 y={lp.y - 6}
                 textAnchor={anchor}
-                fill="var(--ink, #1a1507)"
+                fill="var(--ink, #f5f0e0)"
                 fontSize="12"
                 fontWeight="700"
                 fontFamily="var(--mono, monospace)"
@@ -142,7 +142,7 @@ export function TokenomicsChart() {
           y={CY - 8}
           textAnchor="middle"
           dominantBaseline="central"
-          fill="var(--ink, #1a1507)"
+          fill="var(--ink, #f5f0e0)"
           fontSize="18"
           fontWeight="800"
           fontFamily="var(--mono, monospace)"

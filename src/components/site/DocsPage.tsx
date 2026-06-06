@@ -26,30 +26,31 @@ export function DocsPage() {
 
       <article className="docs-body">
         <div className="eyebrow">Documentation</div>
-        <h1>AEGISPERP — permissionless perpetual markets, built on Solana.</h1>
+        <h1>AEGISPERP — stop waiting for listings. Start printing.</h1>
         <p>
-          AEGISPERP lets anyone spin up a leveraged perpetual market on any Solana token as soon as the
-          launch fee is paid. No committee, no approval queue — just paste a mint, choose your leverage cap,
-          sign the transaction, and the market goes live. <strong>$AGPERP</strong> is the protocol's native token,
-          driving fee discounts, revenue sharing and governance.
+          Every minute you wait for a centralized exchange to list your token is a minute someone else is
+          already earning from it. AEGISPERP lets you launch a leveraged perp market on <em>any</em> Solana
+          token in 10 seconds flat — no committee, no approval queue, no gatekeepers. Paste a mint, choose
+          your leverage, sign, and the market goes live. You earn <strong>10% of every trading fee forever</strong>.
+          <strong>$AGPERP</strong> is the protocol's native token — fee discounts, revenue sharing, governance.
+          The people who move first own the markets. The rest watch.
         </p>
 
         <h2 id="overview">Overview</h2>
         <p>
-          Traditional exchanges choose which tokens deserve a perpetual, take weeks to list them, and pocket
-          all the revenue. AEGISPERP inverts that model: anyone can create an isolated-margin perp on any SPL
-          token in seconds, liquidity seeds itself through a virtual bonding curve, and the market launcher
-          earns a share of trading fees permanently.
+          Centralized exchanges decide which tokens deserve a perp. They take weeks. They keep all the revenue.
+          And you? You get nothing. AEGISPERP flips the table: <em>you</em> create the market, <em>you</em> set
+          the rules, and <em>you</em> collect fees from every single trade — forever.
         </p>
         <ul>
-          <li><strong>Permissionless</strong> — every mint is eligible; just pay a flat 0.3 SOL to go live.</li>
-          <li><strong>Isolated leverage up to 100×</strong> and six order types.</li>
-          <li><strong>Narrow spreads from the first block</strong>, powered by bonding-curve liquidity.</li>
-          <li><strong>Creator earnings</strong> — 10% of all trading fees flow to the market launcher, permanently.</li>
+          <li><strong>Zero gatekeepers</strong> — every SPL mint is eligible. Pay 0.3 SOL, go live instantly.</li>
+          <li><strong>100× isolated leverage</strong> — six order types, tight spreads from block one.</li>
+          <li><strong>Liquidity from the first second</strong> — virtual bonding curve seeds depth automatically.</li>
+          <li><strong>You get paid</strong> — 10% of every trading fee flows to you, the market creator. Permanently.</li>
         </ul>
 
         <h2 id="token">$AGPERP token &amp; tokenomics</h2>
-        <p>$AGPERP is the protocol's native token — a standard Solana SPL token with a fixed, fully-diluted supply.</p>
+        <p>$AGPERP is the key to the protocol. Hold it and you pay less fees, earn staking rewards, and vote on the future of permissionless perps. Fixed supply. No inflation. No hidden unlocks.</p>
         <table className="doc-table">
           <tbody>
             <tr><th>Token</th><td className="v">$AGPERP</td></tr>
@@ -69,53 +70,55 @@ export function DocsPage() {
         </div>
         <h3>Fee distribution</h3>
         <TokenomicsChart />
-        <h3>Utility</h3>
+        <h3>Utility — why you want this token</h3>
         <ul>
-          <li><strong>Fee reduction</strong> — $AGPERP holders pay lower taker and maker fees across all markets.</li>
-          <li><strong>Staking rewards</strong> — a share of protocol revenue is distributed to $AGPERP stakers.</li>
-          <li><strong>Governance</strong> — vote on leverage limits, graduation criteria, and fee distribution.</li>
-          <li><strong>Early access</strong> — priority access to new market formats and launch tools.</li>
+          <li><strong>Pay less, keep more</strong> — holders get reduced taker and maker fees across every market.</li>
+          <li><strong>Earn while you sleep</strong> — protocol revenue flows to $AGPERP stakers. Passive income, on-chain.</li>
+          <li><strong>Shape the protocol</strong> — vote on leverage limits, graduation criteria, fee splits.</li>
+          <li><strong>First in line</strong> — priority access to new market formats and launch tools before anyone else.</li>
         </ul>
 
         <h2 id="fairlaunch">Fair launch on Pump.fun</h2>
         <p>
-          $AGPERP is a <strong>100% fair launch</strong> on <strong>Pump.fun</strong>. Zero private rounds, zero team
-          allocation, zero insider unlocks — the full 1B supply hits the open market from second one.
+          No VCs. No team allocation. No insider unlocks. <strong>100% fair launch on Pump.fun</strong> — the
+          full 1B supply hits the open market from second one. Everyone enters on the same terms. The only
+          advantage is being early.
         </p>
         <ul>
-          <li><strong>No presale, no team tokens</strong> — all tokens are acquired through the public bonding curve.</li>
-          <li><strong>Organic price discovery</strong> — the bonding curve on Pump.fun sets the price until graduation.</li>
-          <li><strong>Raydium migration</strong> — upon graduation, Pump.fun moves liquidity to Raydium and the LP is burned/locked.</li>
-          <li><strong>Single official token</strong> — the contract address announced at launch is the only legitimate $AGPERP.</li>
+          <li><strong>Zero insiders</strong> — every single token is acquired through the public bonding curve.</li>
+          <li><strong>Pure price discovery</strong> — the Pump.fun curve sets the price. No manipulation, no dark pools.</li>
+          <li><strong>Raydium graduation</strong> — liquidity migrates to Raydium and the LP is burned/locked. Permanent.</li>
+          <li><strong>One official token</strong> — the contract address on our X is the only legitimate $AGPERP. Period.</li>
         </ul>
         <div className="doc-callout">
           ⚠️ Always confirm the contract address via our official X account before purchasing. Any token claiming to be
           $AGPERP with a different address is fraudulent.
         </div>
 
-        <h2 id="launch">Launch a market</h2>
-        <p>Creating a perpetual market takes three steps and roughly ten seconds:</p>
+        <h2 id="launch">Launch a market — 10 seconds, 3 steps</h2>
+        <p>While centralized exchanges take weeks to evaluate, committee-approve, and list a single perp — you do it before your coffee cools:</p>
         <ul>
-          <li><strong>1. Enter the mint</strong> — any SPL token address works.</li>
-          <li><strong>2. Choose max leverage</strong> — set the upper bound for traders (2×–100×).</li>
-          <li><strong>3. Pay 0.3 SOL &amp; sign</strong> — the market activates immediately and you're registered as its creator.</li>
+          <li><strong>1. Paste the mint</strong> — any SPL token. Any.</li>
+          <li><strong>2. Set max leverage</strong> — from 2× up to 100×. Your call.</li>
+          <li><strong>3. Pay 0.3 SOL, sign, done</strong> — market goes live instantly. You're the creator. Fees start flowing to you.</li>
         </ul>
-        <p>From that point forward, the market operates against a virtual bonding-curve pool and you receive a portion of every fee it produces.</p>
+        <p>That's it. From this moment, every trade on your market sends 10% of the fee directly to your wallet. You built a revenue stream in less time than it takes to read this paragraph.</p>
 
         <h2 id="trade">Trading perps</h2>
-        <p>All markets use isolated margin. Available order types:</p>
+        <p>Full-featured perp trading. Isolated margin. No cross-contamination between positions — blow up on one market, the rest stay clean.</p>
         <ul>
           <li>Market &amp; Limit</li>
           <li>Stop-market &amp; Stop-limit</li>
           <li>Take-profit &amp; Reduce-only</li>
         </ul>
-        <p>Collateral is denominated in USDC. Each position is isolated — exposure on one market has no effect on another.</p>
+        <p>Collateral in USDC. Six order types. Sub-second execution. Everything a pro trader needs, nothing they don't.</p>
 
         <h2 id="liquidity">Liquidity &amp; graduation</h2>
         <p>
-          New markets launch against a <strong>virtual bonding-curve pool</strong> (default depth ~$120K), ensuring
-          early trades settle with sub-percent slippage. When cumulative volume exceeds <strong>$50K</strong>, the market
-          “graduates” and transitions to deeper, organic liquidity.
+          {'"'}But who provides liquidity for a brand-new market?{'"'} We do — automatically. Every market launches against
+          a <strong>virtual bonding-curve pool</strong> with ~$120K depth. Your first trade settles with sub-percent
+          slippage. When volume hits <strong>$50K</strong>, the market graduates to deeper, organic liquidity.
+          No bootstrapping. No begging market makers.
         </p>
         <table className="doc-table">
           <tbody>
@@ -126,7 +129,7 @@ export function DocsPage() {
         </table>
 
         <h2 id="fees">Fees &amp; creator earnings</h2>
-        <p>Fee distribution is fully transparent. Market creators receive <strong>10% of every trading fee</strong> generated on their market, in perpetuity.</p>
+        <p>This is the part everyone skips to. Market creators receive <strong>10% of every trading fee</strong> generated on their market — not for a month, not for a year. <strong>Forever.</strong> Fully transparent, fully on-chain.</p>
         <table className="doc-table">
           <thead><tr><th>Recipient</th><th>Share</th></tr></thead>
           <tbody>
@@ -140,31 +143,32 @@ export function DocsPage() {
 
         <h2 id="leverage">Leverage &amp; liquidation</h2>
         <p>
-          Leverage ranges from 2× to a per-market ceiling of 100×. Every position carries a liquidation price
-          calculated from entry price, leverage ratio, and a maintenance-margin buffer. For instance, a 25× long
-          entered at <code>$1.8472</code> would liquidate near <code>$1.7807</code>. The insurance fund covers shortfalls
-          during rapid price movements.
+          Up to 100× leverage. High risk, high reward — you know the game. Every position has a clear liquidation
+          price calculated from entry, leverage ratio, and maintenance margin. Example: a 25× long at <code>$1.8472</code>
+          liquidates near <code>$1.7807</code>. The insurance fund backstops shortfalls during rapid moves.
+          Trade with conviction, not with hope.
         </p>
 
         <h2 id="security">Risk &amp; disclaimer</h2>
         <p>
-          Perpetual futures carry significant risk. Leverage can eliminate your collateral rapidly, and
-          permissionless markets may be illiquid or volatile. This is not financial advice. Never trade more
-          than you can afford to lose, and always verify contract addresses independently.
+          Real talk: perpetual futures carry significant risk. Leverage amplifies gains <em>and</em> losses —
+          your collateral can disappear in seconds. Permissionless markets can be illiquid or volatile.
+          This is not financial advice. Never risk more than you can afford to lose. Always verify contract
+          addresses independently. The protocol gives you power — what you do with it is on you.
         </p>
 
         <h2 id="faq">FAQ</h2>
         <h3>Is $AGPERP live yet?</h3>
-        <p>$AGPERP will launch on Pump.fun — the official contract address will be announced on our X account. Always cross-check with our X before purchasing.</p>
+        <p>$AGPERP launches on Pump.fun — the official contract address drops on our X. If you're not following us, you're already late. Always cross-check before purchasing.</p>
         <h3>Do I need $AGPERP to trade?</h3>
-        <p>No — perp trading uses USDC as collateral. Holding $AGPERP just reduces your fees and gives you governance rights.</p>
+        <p>No — perp trading uses USDC as collateral. But holders pay lower fees and earn staking rewards. The question isn't whether you need it — it's how much you want to keep.</p>
         <h3>What does it cost to launch a market?</h3>
-        <p>A flat 0.3 SOL. From there, you earn 10% of all trading fees on that market, permanently.</p>
+        <p>0.3 SOL. That's it. From that moment, you earn 10% of every trading fee on that market — forever. Best ROI you'll find on-chain.</p>
         <h3>Which wallet do I connect?</h3>
-        <p>Phantom and Solflare are natively supported; your actual SOL balance determines your available launch budget on the launch card.</p>
+        <p>Phantom and Solflare are natively supported. Connect, launch, trade — all from one wallet.</p>
 
         <p style={{ marginTop: 34, color: "var(--muted)" }}>
-          Got questions? Find us on X (link in the navbar). © 2026 AEGISPERP Labs.
+          Still have questions? Find us on X (link in the navbar). Or just launch a market and figure it out. © 2026 AEGISPERP Labs.
         </p>
       </article>
     </section>

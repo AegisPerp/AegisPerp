@@ -81,7 +81,7 @@ export function Terminal() {
         max={maxLev}
         value={lev}
         onChange={(e) => setLeverage(Number(e.target.value))}
-        style={{ background: `linear-gradient(to right, var(--green) ${fillPct}%, #dfe4ea ${fillPct}%)` }}
+        style={{ background: `linear-gradient(to right, var(--green) ${fillPct}%, #2a2720 ${fillPct}%)` }}
       />
 
       <div className="trows">

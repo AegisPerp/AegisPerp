@@ -19,15 +19,28 @@ const L = (s: string) => `/logos/${s}.png`;
 // Tradable perp markets ($AGPERP itself is NOT tradable — it's the brand index).
 // Seed prices are placeholders shown until the first realtime tick arrives.
 const SEED: Omit<Market, "spark">[] = [
-  { symbol: "SOL",    name: "Solana",          price: 142.5,     change24h: 0, volume24h: 1_250_000, openInterest: 4_200_000, leverage: 100, logo: L("SOL") },
-  { symbol: "WIF",    name: "dogwifhat",       price: 1.847,     change24h: 0, volume24h: 670_000,   openInterest: 980_000,   leverage: 75,  logo: L("WIF") },
-  { symbol: "BONK",   name: "Bonk",            price: 0.0000234, change24h: 0, volume24h: 890_000,   openInterest: 1_100_000, leverage: 50,  logo: L("BONK") },
-  { symbol: "JUP",    name: "Jupiter",         price: 0.89,      change24h: 0, volume24h: 540_000,   openInterest: 760_000,   leverage: 50,  logo: L("JUP") },
-  { symbol: "PYTH",   name: "Pyth Network",    price: 0.34,      change24h: 0, volume24h: 320_000,   openInterest: 410_000,   leverage: 25,  logo: L("PYTH") },
-  { symbol: "JTO",    name: "Jito",            price: 2.41,      change24h: 0, volume24h: 280_000,   openInterest: 350_000,   leverage: 50,  logo: L("JTO") },
-  { symbol: "RENDER", name: "Render",          price: 7.32,      change24h: 0, volume24h: 240_000,   openInterest: 300_000,   leverage: 25,  logo: L("RENDER") },
-  { symbol: "POPCAT", name: "Popcat",          price: 0.92,      change24h: 0, volume24h: 240_000,   openInterest: 300_000,   leverage: 25,  logo: L("POPCAT") },
-  { symbol: "MEW",    name: "cat in a dogs world", price: 0.0084, change24h: 0, volume24h: 130_000,  openInterest: 180_000,   leverage: 25,  logo: L("MEW") },
+  // Top market cap
+  { symbol: "BTC",    name: "Bitcoin",           price: 104250,    change24h: 0, volume24h: 38_500_000, openInterest: 52_000_000, leverage: 100, logo: L("BTC") },
+  { symbol: "ETH",    name: "Ethereum",          price: 2520,      change24h: 0, volume24h: 18_200_000, openInterest: 28_000_000, leverage: 100, logo: L("ETH") },
+  { symbol: "BNB",    name: "BNB",               price: 680,       change24h: 0, volume24h: 2_800_000,  openInterest: 5_200_000,  leverage: 75,  logo: L("BNB") },
+  { symbol: "XRP",    name: "XRP",               price: 2.38,      change24h: 0, volume24h: 3_400_000,  openInterest: 6_100_000,  leverage: 75,  logo: L("XRP") },
+  { symbol: "ADA",    name: "Cardano",           price: 0.74,      change24h: 0, volume24h: 1_200_000,  openInterest: 2_800_000,  leverage: 50,  logo: L("ADA") },
+  { symbol: "DOGE",   name: "Dogecoin",          price: 0.218,     change24h: 0, volume24h: 2_600_000,  openInterest: 4_100_000,  leverage: 75,  logo: L("DOGE") },
+  { symbol: "SOL",    name: "Solana",            price: 172.5,     change24h: 0, volume24h: 4_250_000,  openInterest: 8_200_000,  leverage: 100, logo: L("SOL") },
+  { symbol: "AVAX",   name: "Avalanche",         price: 24.5,      change24h: 0, volume24h: 980_000,    openInterest: 1_800_000,  leverage: 50,  logo: L("AVAX") },
+  { symbol: "DOT",    name: "Polkadot",          price: 4.52,      change24h: 0, volume24h: 680_000,    openInterest: 1_200_000,  leverage: 50,  logo: L("DOT") },
+  { symbol: "LINK",   name: "Chainlink",         price: 15.8,      change24h: 0, volume24h: 1_100_000,  openInterest: 2_400_000,  leverage: 50,  logo: L("LINK") },
+  { symbol: "SUI",    name: "Sui",               price: 3.72,      change24h: 0, volume24h: 1_400_000,  openInterest: 2_600_000,  leverage: 50,  logo: L("SUI") },
+  { symbol: "PEPE",   name: "Pepe",              price: 0.0000142, change24h: 0, volume24h: 1_800_000,  openInterest: 3_200_000,  leverage: 50,  logo: L("PEPE") },
+  // Solana ecosystem
+  { symbol: "WIF",    name: "dogwifhat",         price: 1.847,     change24h: 0, volume24h: 670_000,    openInterest: 980_000,    leverage: 75,  logo: L("WIF") },
+  { symbol: "BONK",   name: "Bonk",              price: 0.0000234, change24h: 0, volume24h: 890_000,    openInterest: 1_100_000,  leverage: 50,  logo: L("BONK") },
+  { symbol: "JUP",    name: "Jupiter",           price: 0.89,      change24h: 0, volume24h: 540_000,    openInterest: 760_000,    leverage: 50,  logo: L("JUP") },
+  { symbol: "PYTH",   name: "Pyth Network",      price: 0.34,      change24h: 0, volume24h: 320_000,    openInterest: 410_000,    leverage: 25,  logo: L("PYTH") },
+  { symbol: "JTO",    name: "Jito",              price: 2.41,      change24h: 0, volume24h: 280_000,    openInterest: 350_000,    leverage: 50,  logo: L("JTO") },
+  { symbol: "RENDER", name: "Render",            price: 7.32,      change24h: 0, volume24h: 240_000,    openInterest: 300_000,    leverage: 25,  logo: L("RENDER") },
+  { symbol: "POPCAT", name: "Popcat",            price: 0.92,      change24h: 0, volume24h: 240_000,    openInterest: 300_000,    leverage: 25,  logo: L("POPCAT") },
+  { symbol: "MEW",    name: "cat in a dogs world", price: 0.0084,  change24h: 0, volume24h: 130_000,    openInterest: 180_000,    leverage: 25,  logo: L("MEW") },
 ];
 function initMarkets(): Market[] { return SEED.map((m) => ({ ...m, spark: [m.price] })); }
 
@@ -47,7 +60,7 @@ export function FeedProvider({ children }: { children: ReactNode }) {
   const [agperp, setAgperp] = useState<IndexStat>({ price: 24.8, change24h: 0 });
   const [connected, setConnected] = useState(false);
   const [source, setSource] = useState("connecting…");
-  const [selected, setSelected] = useState("SOL");
+  const [selected, setSelected] = useState("BTC");
   const ref = useRef<Market[]>(markets);
   ref.current = markets;
   const alpRef = useRef(agperp);

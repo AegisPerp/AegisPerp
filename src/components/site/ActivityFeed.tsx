@@ -1,6 +1,6 @@
 import { useState, useEffect, useRef, useCallback } from "react";
 
-const TOKENS = ["SOL", "WIF", "BONK", "JUP", "PYTH", "JTO", "RENDER", "POPCAT", "MEW", "ORCA", "RAY", "DRIFT", "BOME"];
+const TOKENS = ["BTC", "ETH", "BNB", "XRP", "ADA", "DOGE", "SOL", "AVAX", "DOT", "LINK", "SUI", "PEPE", "WIF", "BONK", "JUP", "PYTH", "JTO", "RENDER", "POPCAT", "MEW", "ORCA"];
 
 function fakeAddr(): string {
   const chars = "ABCDEFGHJKLMNPQRSTUVWXYZabcdefghijkmnopqrstuvwxyz123456789";
@@ -92,8 +92,8 @@ export function ActivityFeed() {
   return (
     <section className="activity-section rise" id="activity">
       <div className="center-head">
-        <div className="eyebrow">Live activity</div>
-        <h2>Markets moving right now.</h2>
+        <div className="eyebrow">Happening now</div>
+        <h2>People are making money<br/>while you're reading this.</h2>
       </div>
       <div className="activity-feed card">
         {items.map((item) => (

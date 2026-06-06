@@ -13,7 +13,7 @@ services:
       - API_URL=http://backend:3018
     labels:
       - "traefik.enable=true"
-      - "traefik.http.routers.perp.rule=Host(`hyperperp.fun`)"
+      - "traefik.http.routers.perp.rule=Host(`aegisperp.fun`)"
       - "traefik.http.routers.perp.entrypoints=websecure"
       - "traefik.http.routers.perp.tls.certresolver=letsencrypt"
       - "traefik.http.services.perp.loadbalancer.server.port=3018"
@@ -37,7 +37,7 @@ services:
       - SOLANA_RPC_URL=https://api.mainnet-beta.solana.com
     labels:
       - "traefik.enable=true"
-      - "traefik.http.routers.perp-api.rule=Host(`api.hyperperp.fun`)"
+      - "traefik.http.routers.perp-api.rule=Host(`api.aegisperp.fun`)"
       - "traefik.http.routers.perp-api.entrypoints=websecure"
       - "traefik.http.routers.perp-api.tls.certresolver=letsencrypt"
       - "traefik.http.services.perp-api.loadbalancer.server.port=3018"

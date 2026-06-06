@@ -53,9 +53,9 @@ export function App() {
           <ActivityFeed />
           <section className="section" id="terminal">
             <ScrollReveal className="reveal center-head">
-              <div className="eyebrow">One terminal</div>
-              <h2>The same desk across<br />every market you touch.</h2>
-              <p>Pick any market from the table — the chart and this terminal update live with it.</p>
+              <div className="eyebrow">Your edge</div>
+              <h2>One terminal.<br />Every market. Zero lag.</h2>
+              <p>Click a market, the chart locks in. Execute in under a second. While others fumble between tabs, you're already in the trade.</p>
             </ScrollReveal>
             <ScrollReveal className="reveal">
               <div className="desk">

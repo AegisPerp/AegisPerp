@@ -10,7 +10,20 @@ export interface Asset {
 }
 
 export const ASSETS: Asset[] = [
+  // Top 10 market cap
+  { sym: "BTC",    binance: "BTCUSDT",    bybit: "BTCUSDT",    okx: "BTC-USDT",    gate: "BTC_USDT",    coinbase: "BTC-USD",    kraken: "XBT/USD",    bitget: "BTCUSDT",    cc: "BTC",    gecko: "bitcoin",                 coincap: "bitcoin" },
+  { sym: "ETH",    binance: "ETHUSDT",    bybit: "ETHUSDT",    okx: "ETH-USDT",    gate: "ETH_USDT",    coinbase: "ETH-USD",    kraken: "ETH/USD",    bitget: "ETHUSDT",    cc: "ETH",    gecko: "ethereum",                coincap: "ethereum" },
+  { sym: "BNB",    binance: "BNBUSDT",    bybit: "BNBUSDT",    okx: "BNB-USDT",    gate: "BNB_USDT",                            kraken: "BNB/USD",    bitget: "BNBUSDT",    cc: "BNB",    gecko: "binancecoin",             coincap: "binance-coin" },
+  { sym: "XRP",    binance: "XRPUSDT",    bybit: "XRPUSDT",    okx: "XRP-USDT",    gate: "XRP_USDT",    coinbase: "XRP-USD",    kraken: "XRP/USD",    bitget: "XRPUSDT",    cc: "XRP",    gecko: "ripple",                  coincap: "xrp" },
+  { sym: "ADA",    binance: "ADAUSDT",    bybit: "ADAUSDT",    okx: "ADA-USDT",    gate: "ADA_USDT",    coinbase: "ADA-USD",    kraken: "ADA/USD",    bitget: "ADAUSDT",    cc: "ADA",    gecko: "cardano",                 coincap: "cardano" },
+  { sym: "DOGE",   binance: "DOGEUSDT",   bybit: "DOGEUSDT",   okx: "DOGE-USDT",   gate: "DOGE_USDT",   coinbase: "DOGE-USD",   kraken: "DOGE/USD",   bitget: "DOGEUSDT",   cc: "DOGE",   gecko: "dogecoin",                coincap: "dogecoin" },
   { sym: "SOL",    binance: "SOLUSDT",    bybit: "SOLUSDT",    okx: "SOL-USDT",    gate: "SOL_USDT",    coinbase: "SOL-USD",    kraken: "SOL/USD",    bitget: "SOLUSDT",    cc: "SOL",    gecko: "solana",                  coincap: "solana" },
+  { sym: "AVAX",   binance: "AVAXUSDT",   bybit: "AVAXUSDT",   okx: "AVAX-USDT",   gate: "AVAX_USDT",   coinbase: "AVAX-USD",   kraken: "AVAX/USD",   bitget: "AVAXUSDT",   cc: "AVAX",   gecko: "avalanche-2",             coincap: "avalanche" },
+  { sym: "DOT",    binance: "DOTUSDT",    bybit: "DOTUSDT",    okx: "DOT-USDT",    gate: "DOT_USDT",    coinbase: "DOT-USD",    kraken: "DOT/USD",    bitget: "DOTUSDT",    cc: "DOT",    gecko: "polkadot",                coincap: "polkadot" },
+  { sym: "LINK",   binance: "LINKUSDT",   bybit: "LINKUSDT",   okx: "LINK-USDT",   gate: "LINK_USDT",   coinbase: "LINK-USD",   kraken: "LINK/USD",   bitget: "LINKUSDT",   cc: "LINK",   gecko: "chainlink",               coincap: "chainlink" },
+  { sym: "SUI",    binance: "SUIUSDT",    bybit: "SUIUSDT",    okx: "SUI-USDT",    gate: "SUI_USDT",    coinbase: "SUI-USD",    kraken: "SUI/USD",    bitget: "SUIUSDT",    cc: "SUI",    gecko: "sui",                     coincap: "sui" },
+  { sym: "PEPE",   binance: "PEPEUSDT",   bybit: "PEPEUSDT",   okx: "PEPE-USDT",   gate: "PEPE_USDT",   coinbase: "PEPE-USD",                         bitget: "PEPEUSDT",   cc: "PEPE",   gecko: "pepe",                    coincap: "pepe" },
+  // Solana ecosystem
   { sym: "WIF",    binance: "WIFUSDT",    bybit: "WIFUSDT",    okx: "WIF-USDT",    gate: "WIF_USDT",    coinbase: "WIF-USD",    kraken: "WIF/USD",    bitget: "WIFUSDT",    cc: "WIF",    gecko: "dogwifcoin" },
   { sym: "BONK",   binance: "BONKUSDT",   bybit: "BONKUSDT",   okx: "BONK-USDT",   gate: "BONK_USDT",   coinbase: "BONK-USD",   kraken: "BONK/USD",   bitget: "BONKUSDT",   cc: "BONK",   gecko: "bonk",                    coincap: "bonk" },
   { sym: "JUP",    binance: "JUPUSDT",    bybit: "JUPUSDT",    okx: "JUP-USDT",    gate: "JUP_USDT",    coinbase: "JUP-USD",    kraken: "JUP/USD",    bitget: "JUPUSDT",    cc: "JUP",    gecko: "jupiter-exchange-solana" },

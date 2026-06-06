@@ -1,63 +1,154 @@
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { useFeed } from "../../lib/feed";
-import { useWallet } from "../../lib/wallet";
-import { TokenIcon } from "./TokenIcon";
 import { ScrollReveal } from "./ScrollReveal";
 
-function LaunchCard() {
+/* ── Animated icon: Rocket with flame flicker ── */
+function RocketIcon() {
+  return (
+    <div className="pillar-icon pillar-icon--launch">
+      <svg width="48" height="48" viewBox="0 0 48 48" fill="none">
+        <path d="M24 4C24 4 32 12 32 24C32 32 28 38 24 42C20 38 16 32 16 24C16 12 24 4 24 4Z" fill="url(#rk)" stroke="#c8a415" strokeWidth="2" strokeLinejoin="round"/>
+        <circle cx="24" cy="22" r="4" fill="#fff" stroke="#c8a415" strokeWidth="1.5"/>
+        <path className="flame" d="M21 42C21 42 22 46 24 48C26 46 27 42 27 42" stroke="#e8c026" strokeWidth="2.5" strokeLinecap="round"/>
+        <defs><linearGradient id="rk" x1="24" y1="4" x2="24" y2="42"><stop stopColor="#f5d44e"/><stop offset="1" stopColor="#c8a415"/></linearGradient></defs>
+      </svg>
+    </div>
+  );
+}
+
+/* ── Animated icon: Spread bars pulsing ── */
+function SpreadIcon() {
+  return (
+    <div className="pillar-icon pillar-icon--spread">
+      <svg width="48" height="48" viewBox="0 0 48 48" fill="none">
+        <rect className="bar bar1" x="6" y="28" width="8" height="14" rx="3" fill="#c8a415" opacity="0.6"/>
+        <rect className="bar bar2" x="20" y="16" width="8" height="26" rx="3" fill="#c8a415" opacity="0.8"/>
+        <rect className="bar bar3" x="34" y="8" width="8" height="34" rx="3" fill="#c8a415"/>
+        <path d="M10 26L24 14L38 6" stroke="#f5d44e" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" strokeDasharray="4 3"/>
+      </svg>
+    </div>
+  );
+}
+
+/* ── Animated icon: Coin stack growing ── */
+function EarnIcon() {
+  return (
+    <div className="pillar-icon pillar-icon--earn">
+      <svg width="48" height="48" viewBox="0 0 48 48" fill="none">
+        <ellipse className="coin c1" cx="24" cy="38" rx="14" ry="5" fill="#c8a415" opacity="0.4"/>
+        <ellipse className="coin c2" cx="24" cy="32" rx="14" ry="5" fill="#c8a415" opacity="0.6"/>
+        <ellipse className="coin c3" cx="24" cy="26" rx="14" ry="5" fill="#c8a415" opacity="0.8"/>
+        <ellipse className="coin c4" cx="24" cy="20" rx="14" ry="5" fill="#e8c026"/>
+        <text x="24" y="23" textAnchor="middle" fill="#0a0a08" fontSize="8" fontWeight="800" fontFamily="var(--mono)">$</text>
+      </svg>
+    </div>
+  );
+}
+
+/* ── Live depth bar: animated bid/ask spread ── */
+function DepthBar() {
+  const [spread, setSpread] = useState(0.42);
+  const [bid, setBid] = useState(62);
+  const [ask, setAsk] = useState(38);
+
+  useEffect(() => {
+    const iv = setInterval(() => {
+      setSpread(+(0.2 + Math.random() * 0.5).toFixed(2));
+      const b = 55 + Math.random() * 15;
+      setBid(Math.round(b));
+      setAsk(Math.round(100 - b));
+    }, 2200);
+    return () => clearInterval(iv);
+  }, []);
+
+  return (
+    <div className="depth-bar-wrap">
+      <div className="depth-bar">
+        <div className="depth-bid" style={{ width: `${bid}%` }}>
+          <span>BID {bid}%</span>
+        </div>
+        <div className="depth-ask" style={{ width: `${ask}%` }}>
+          <span>ASK {ask}%</span>
+        </div>
+      </div>
+      <div className="depth-stats">
+        <div><span className="k">Spread</span><span className="v">{spread}%</span></div>
+        <div><span className="k">Depth</span><span className="v">$120K</span></div>
+        <div><span className="k">Slippage</span><span className="v">0.42%</span></div>
+      </div>
+    </div>
+  );
+}
+
+/* ── Revenue counter: ticks up continuously ── */
+function RevenueCounter() {
+  const [revenue, setRevenue] = useState(4210.0);
+  const [daily, setDaily] = useState(84.2);
+  const ref = useRef(revenue);
+  ref.current = revenue;
+
+  useEffect(() => {
+    const iv = setInterval(() => {
+      const tick = 0.01 + Math.random() * 0.08;
+      setRevenue((r) => +(r + tick).toFixed(2));
+      setDaily((d) => +(d + tick * 0.3).toFixed(2));
+    }, 600);
+    return () => clearInterval(iv);
+  }, []);
+
+  return (
+    <div className="revenue-wrap">
+      <div className="revenue-main">
+        <span className="revenue-label">Your earnings so far</span>
+        <span className="revenue-val">${revenue.toLocaleString("en", { minimumFractionDigits: 2 })}</span>
+      </div>
+      <div className="revenue-rows">
+        <div className="revenue-row">
+          <span className="k">Today</span>
+          <span className="v up">+${daily.toFixed(2)}</span>
+        </div>
+        <div className="revenue-row">
+          <span className="k">This week</span>
+          <span className="v up">+$612.40</span>
+        </div>
+        <div className="revenue-row">
+          <span className="k">Your cut</span>
+          <span className="v">10% of all fees</span>
+        </div>
+      </div>
+    </div>
+  );
+}
+
+/* ── Mini launch form (compact) ── */
+function MiniLaunch() {
   const { markets } = useFeed();
-  const { address, balance, walletName, openChooser } = useWallet();
   const [mint, setMint] = useState("WIF");
-  const [leverage, setLeverage] = useState(50);
-  const [notice, setNotice] = useState("");
+  const [lev, setLev] = useState(50);
+  const [launched, setLaunched] = useState(false);
 
   const token = markets.find((m) => m.symbol === mint);
   const maxLev = token?.leverage ?? 100;
-  const lev = Math.min(leverage, maxLev);
-  useEffect(() => { setLeverage((l) => Math.min(l, maxLev)); }, [maxLev]);
-  const fillPct = ((lev - 2) / (maxLev - 2 || 1)) * 100;
-  const short = address ? address.slice(0, 4) + "…" + address.slice(-4) : "";
+  const safeLev = Math.min(lev, maxLev);
+  const fillPct = ((safeLev - 2) / (maxLev - 2 || 1)) * 100;
 
-  const launch = () => {
-    if (!address) { openChooser(); return; }
-    setNotice(`${mint}-PERP @ ${lev}× — market launch submitted. Awaiting on-chain confirmation.`);
-    setTimeout(() => setNotice(""), 5000);
-  };
+  const fire = () => { setLaunched(true); setTimeout(() => setLaunched(false), 2500); };
 
   return (
-    <div className="launch">
-      <div className="field-label">Token mint</div>
-      <div className="mint">
-        <TokenIcon symbol={mint} src={token?.logo} size={26} />
-        <select value={mint} onChange={(e) => setMint(e.target.value)}>
-          {markets.map((m) => <option key={m.symbol} value={m.symbol}>{m.symbol} · {m.name}</option>)}
+    <div className="mini-launch">
+      <div className="ml-row">
+        <select className="ml-select" value={mint} onChange={(e) => { setMint(e.target.value); setLaunched(false); }}>
+          {markets.map((m) => <option key={m.symbol} value={m.symbol}>{m.symbol}</option>)}
         </select>
-      </div>
-
-      <div className="wallet-row">
-        <button className={"wallet-btn " + (address ? "on" : "")} onClick={openChooser}>
-          {address ? (
-            <><img src={`/logos/${walletName}.svg`} alt="" style={{ width: 15, height: 15, borderRadius: 4, marginRight: 6, verticalAlign: "-2px" }} />{short}</>
-          ) : "Connect wallet"}
-        </button>
-        <div className="wallet-bal">
-          {address ? <>Balance <b>{balance != null ? balance.toFixed(3) : "…"} SOL</b></> : "creator wallet"}
-        </div>
-      </div>
-
-      <div className="field-label" style={{ marginBottom: 0 }}>
-        <div className="lev-head"><span>Max leverage</span><span className="x">{lev}×</span></div>
+        <span className="ml-lev">{safeLev}x</span>
       </div>
       <input
-        className="range" type="range" min={2} max={maxLev} step={1} value={lev}
-        onChange={(e) => setLeverage(Number(e.target.value))}
-        style={{ background: `linear-gradient(to right, var(--green) ${fillPct}%, #dfe4ea ${fillPct}%)` }}
+        className="range" type="range" min={2} max={maxLev} step={1} value={safeLev}
+        onChange={(e) => setLev(Number(e.target.value))}
+        style={{ background: `linear-gradient(to right, var(--green) ${fillPct}%, #2a2720 ${fillPct}%)` }}
       />
-
-      <div className="fee-row"><span className="k">Launch fee</span><span className="v">0.3 SOL</span></div>
-      {notice && <div className="term-notice">{notice}</div>}
-      <button className="btn btn-primary btn-lg" style={{ width: "100%" }} onClick={launch}>
-        Launch market →
+      <button className={"btn btn-primary ml-btn" + (launched ? " launched" : "")} onClick={fire}>
+        {launched ? "Launched!" : "Launch now →"}
       </button>
     </div>
   );
@@ -73,55 +164,36 @@ export function HowItWorks() {
   return (
     <section className="section" id="how">
       <ScrollReveal className="reveal center-head">
-        <div className="eyebrow">How it works</div>
-        <h2>Three things no centralized<br />perp desk will ever give you.</h2>
+        <div className="eyebrow">Why AEGISPERP</div>
+        <h2>CEXs take weeks to list.<br/>You take 10 seconds.</h2>
       </ScrollReveal>
 
-      <div className="steps">
-        <ScrollReveal>
-          <div className="card spot step" onMouseMove={spot}>
-            <div className="no">01</div>
-            <h3>Pay 0.3 SOL, ship a perp.</h3>
-            <p>No listing process, no gatekeepers, no backroom deals. Paste a mint, configure your leverage, sign once — the market goes live before your post hits the timeline.</p>
-            <LaunchCard />
+      <div className="pillars">
+        <ScrollReveal className="reveal reveal-d1">
+          <div className="card spot pillar" onMouseMove={spot}>
+            <RocketIcon />
+            <h3>Ship first. Ask never.</h3>
+            <p>No applications. No committees. No begging for a listing. Pay 0.3 SOL, your market is live before your competitor even opens a support ticket.</p>
+            <MiniLaunch />
+            <div className="pillar-tag">0.3 SOL — that's it</div>
           </div>
         </ScrollReveal>
 
-        <ScrollReveal>
-          <div className="card spot step" onMouseMove={spot}>
-            <div className="no">02</div>
-            <h3>Narrow spreads from the start.</h3>
-            <p>Fresh markets open against a virtual bonding-curve pool. Early trades settle with sub-percent slippage — the chart reads like a real market, not static noise.</p>
-            <svg className="mini" viewBox="0 0 400 160" preserveAspectRatio="none">
-              <defs><linearGradient id="bc" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stopColor="#c8a415" stopOpacity="0.25" /><stop offset="100%" stopColor="#c8a415" stopOpacity="0" /></linearGradient></defs>
-              <path d="M8,138 C110,116 210,72 392,26 L392,160 L8,160 Z" fill="url(#bc)" />
-              <path d="M8,138 C110,116 210,72 392,26" fill="none" stroke="#c8a415" strokeWidth="2.5" strokeLinecap="round" />
-              <line x1="262" y1="22" x2="262" y2="150" stroke="#c8a415" strokeWidth="1.5" strokeDasharray="5 5" opacity="0.7" />
-              <text x="266" y="30" fill="#c8a415" fontSize="10" fontFamily="JetBrains Mono, monospace" fontWeight="700">GRADUATION</text>
-            </svg>
-            <div className="mini-stats">
-              <div><div className="k">Slippage @ $10K</div><div className="v">0.42%</div></div>
-              <div><div className="k">Virtual depth</div><div className="v">$120K</div></div>
-              <div><div className="k">Graduates at</div><div className="v">$50K vol</div></div>
-            </div>
+        <ScrollReveal className="reveal reveal-d2">
+          <div className="card spot pillar" onMouseMove={spot}>
+            <SpreadIcon />
+            <h3>Real liquidity. Instantly.</h3>
+            <p>Not a ghost order book — bonding-curve depth from block one. Sub-percent slippage while other platforms show you "coming soon."</p>
+            <DepthBar />
           </div>
         </ScrollReveal>
 
-        <ScrollReveal>
-          <div className="card spot step" onMouseMove={spot}>
-            <div className="no">03</div>
-            <h3>Earn as long as the market exists.</h3>
-            <p>10% of all trading fees on your market flows directly to your wallet, indefinitely. The volume doesn't need to come from you.</p>
-            <svg className="mini" viewBox="0 0 400 160" preserveAspectRatio="none">
-              <defs><linearGradient id="er" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stopColor="#c8a415" stopOpacity="0.22" /><stop offset="100%" stopColor="#c8a415" stopOpacity="0" /></linearGradient></defs>
-              <path d="M8,120 L48,104 L88,112 L128,72 L168,90 L208,58 L248,40 L288,62 L328,48 L392,66 L392,160 L8,160 Z" fill="url(#er)" />
-              <path d="M8,120 L48,104 L88,112 L128,72 L168,90 L208,58 L248,40 L288,62 L328,48 L392,66" fill="none" stroke="#c8a415" strokeWidth="2.5" strokeLinejoin="round" strokeLinecap="round" />
-            </svg>
-            <div className="mini-stats">
-              <div><div className="k">Last 24h</div><div className="v g">$84.20</div></div>
-              <div><div className="k">Last 7d</div><div className="v g">$612.40</div></div>
-              <div><div className="k">Lifetime</div><div className="v g">$4,210</div></div>
-            </div>
+        <ScrollReveal className="reveal reveal-d3">
+          <div className="card spot pillar" onMouseMove={spot}>
+            <EarnIcon />
+            <h3>Get paid while you sleep.</h3>
+            <p>10% of every trade fee on your market hits your wallet automatically. Not for a month. Not for a year. Forever. The volume compounds, your income compounds.</p>
+            <RevenueCounter />
           </div>
         </ScrollReveal>
       </div>

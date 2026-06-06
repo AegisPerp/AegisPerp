@@ -49,8 +49,8 @@ export function Markets() {
       <section className="section" id="markets">
         <div className="sec-head">
           <div>
-            <h2>Live markets</h2>
-            <p>Click any market to load it on the chart — prices stream in real time.</p>
+            <h2>21 markets. Zero gatekeepers.</h2>
+            <p>Every row is a money printer someone launched in 10 seconds. Pick one and start trading — or launch your own.</p>
           </div>
           <span className="live">
             <span className="dot" style={{ background: connected ? "var(--accent)" : "var(--cyan)" }} />

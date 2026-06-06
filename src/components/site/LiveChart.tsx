@@ -70,9 +70,9 @@ export function LiveChart() {
     const chart = createChart(hostRef.current, {
       autoSize: true,
       layout: { background: { type: ColorType.Solid, color: "transparent" }, textColor: "#8b94a1", fontFamily: "JetBrains Mono, monospace", attributionLogo: false },
-      grid: { vertLines: { color: "rgba(20,30,50,0.04)" }, horzLines: { color: "rgba(20,30,50,0.06)" } },
-      rightPriceScale: { borderColor: "#e4e8ee" },
-      timeScale: { borderColor: "#e4e8ee", timeVisible: true, secondsVisible: false },
+      grid: { vertLines: { color: "rgba(255,255,255,0.04)" }, horzLines: { color: "rgba(255,255,255,0.06)" } },
+      rightPriceScale: { borderColor: "#2a2720" },
+      timeScale: { borderColor: "#2a2720", timeVisible: true, secondsVisible: false },
       crosshair: {
         mode: CrosshairMode.Magnet,
         vertLine: { color: "rgba(47,165,106,0.4)", width: 1, style: LineStyle.Solid, labelBackgroundColor: "#2fa56a" },
