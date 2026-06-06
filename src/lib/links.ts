@@ -1,6 +1,7 @@
 // Fill PUMPFUN_CA once the token is live — all "Buy $AGPERP" buttons update automatically
-export const PUMPFUN_CA = "Fmk4MkTSkZazQ3pfJnNF78kpYQVgyBQJZ36GW1Sypump";
+export const PUMPFUN_CA = "";
 export const PUMPFUN_URL = PUMPFUN_CA ? `https://pump.fun/coin/${PUMPFUN_CA}` : "https://pump.fun";
 
 // social
 export const TWITTER_URL = "https://x.com/AegisPerp";
+export const GITHUB_URL = "https://github.com/AegisPerp/AegisPerp";

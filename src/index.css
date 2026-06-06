@@ -137,7 +137,7 @@ input { font-family: var(--sans); }
   background: linear-gradient(135deg, var(--green-2), var(--green) 70%, var(--cyan));
   box-shadow: 0 8px 20px -8px rgba(200,164,21,.7), inset 0 1px 0 rgba(255,255,255,.5); }
 .brand-mark svg { width: 20px; height: 20px; }
-.brand-logo { height: 34px; width: auto; display: block; }
+.brand-logo { height: 48px; width: auto; display: block; }
 .brand-name { font-family: var(--heading); font-weight: 800; font-size: 19px; letter-spacing: -.02em; color: var(--ink); }
 .brand-name b { background: linear-gradient(120deg, var(--green), var(--cyan)); -webkit-background-clip: text; background-clip: text; color: transparent; }
 .nav-links { display: flex; gap: 4px; }
@@ -307,7 +307,7 @@ table.mk tbody tr:last-child td { border-bottom: none; }
 .footer { margin-top: 60px; padding: 32px 0 50px; border-top: 1px solid var(--stroke); color: var(--muted); font-size: 13.5px; }
 .foot-top { display: grid; grid-template-columns: 1.25fr 2fr; gap: 32px; }
 .foot-id { display: flex; align-items: center; gap: 10px; }
-.foot-brand .brand-logo { height: 28px; }
+.foot-brand .brand-logo { height: 44px; }
 .foot-brand .brand-name { font-size: 17px; }
 .foot-brand p { margin: 12px 0 14px; max-width: 370px; line-height: 1.6; }
 .foot-socials { display: flex; gap: 10px; }
@@ -508,7 +508,7 @@ table.mk tbody tr:last-child td { border-bottom: none; }
   .wrap { padding: 0 14px; }
   .nav { top: 6px; padding: 0 10px; }
   .nav-inner { padding: 8px 10px 8px 12px; gap: 8px; }
-  .brand-logo { height: 28px; }
+  .brand-logo { height: 38px; }
   .brand-name { font-size: 16px; }
   .pill { display: none; }
   .btn-ghost { display: none; }
