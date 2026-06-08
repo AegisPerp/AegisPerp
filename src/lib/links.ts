@@ -4,4 +4,3 @@ export const PUMPFUN_URL = PUMPFUN_CA ? `https://pump.fun/coin/${PUMPFUN_CA}` : 
 
 // social
 export const TWITTER_URL = "https://x.com/AegisPerp";
-export const GITHUB_URL = "https://github.com/AegisPerp/AegisPerp";
