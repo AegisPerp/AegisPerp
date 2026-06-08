@@ -48,9 +48,9 @@ export function Footer() {
               title: "Community",
               links: [
                 { label: "Twitter/X", href: "https://x.com/AegisPerp", external: true },
+                { label: "GitHub", href: "https://github.com/AegisPerp/AegisPerp", external: true },
                 { label: "Discord", href: "#" },
                 { label: "Terms", href: "#" },
-                { label: "Privacy", href: "#" },
               ],
             },
           ].map(section => (
